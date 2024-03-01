@@ -1,0 +1,300 @@
+Clasificarea sistemelor de calcul 
+    von Neumann 
+    -  CPU
+    -  RAM
+    -  I/O
+    -  Magistrale
+
+Arhitecturi de procesor: 
+
+    -  RISC - Reduced Instruction Set Computing
+            - Eficient pentru procesor
+            - Complicat pentru memorie
+            - Arhitectura interna simpla
+            - un task simplu : 3 instructiuni
+    -  CISC - Complex Instruction Set Computing
+            - Eficient pentru memorie
+            - Complicat pentru procesor
+            - Arhitectura interna complexa
+            - un task simplu : o instructiune
+
+    -  32 de biti
+    -  64 de biti
+
+    -  x86  - pe 32/64 de biti 
+            - compatibil cu setul de instructiuni al Intel 8086
+    -  ARM  - 32 biti (ARMv7) / 64 biti (ARMv8)
+
+    -  x86-64 - 64 de biti
+            - AMD64
+            - Intel 64
+            - IA-32e
+            - x64
+
+    -  RISC-V - arhitectura open-source
+
+    -  MIPS
+    -  PowerPC
+    -  SPARC
+    -  Alpha
+    -  Itanium
+
+    -  Procesoarele ARM sunt folosite in telefoane mobile, 
+    tablete, smartwatch-uri, sisteme de navigatie, 
+    routere, televizoare, console de jocuri, etc
+
+    -  Procesoarele x86-64 sunt folosite in calculatoare,
+     servere, etc
+    -  Procesoarele RISC-V sunt folosite in dispozitive 
+    IoT, routere, etc
+
+    Componente Desktop:
+            - CPU
+            - RAM
+            - Placa video
+            - Placa de baza
+            - HDD/SSD
+            - Sursa
+            - Carcasa
+            - Tastatura
+            - Mouse
+            - Monitor
+    
+    Componente telefoane mobile:
+            - CPU
+            - RAM
+            - Placa video
+            - Placa de baza
+            - Memorie flash
+            - Baterie
+            - Ecran
+            - Tastatura
+            - Camera foto
+            - Senzori
+            - Difuzor
+            - Microfon
+
+    Componente Laptop:
+            - CPU
+            - RAM
+            - Placa video
+            - Placa de baza
+            - HDD/SSD
+            - Baterie
+            - Sursa
+            - Carcasa
+            - Tastatura
+            - Mouse
+            - Monitor
+
+Driver - program care asigura comunicarea dintre 
+sistemul de operare si un dispozitiv hardware
+
+Tipuri de drivere hardware:
+    -  drivere pentru placa video
+    -  drivere pentru placa de retea
+    -  drivere pentru placa de sunet
+    -  drivere pentru placa de baza
+
+Tipuri de drivere software - 
+    -  drivere generice
+    -  drivere specifice
+    -  drivere de tip monolitic
+    -  drivere de tip modular
+    -  drivere de tip microkernel
+    -  drivere de tip hybrid
+
+    -  drivere de tip monolitic - 
+            -  partea principala a driverului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a driverului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  drivere de tip modular - 
+            -  partea principala a driverului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a driverului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: stabilitatea sistemului
+            -  dezavantaje: viteza de rulare
+
+    -  drivere de tip microkernel - 
+            -  partea principala a driverului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a driverului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  drivere de tip hybrid - 
+            -  partea principala a driverului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a driverului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+Sisteme de operare
+    -  Windows
+    -  Linux
+    -  Unix
+    -  MacOS
+    -  Android
+    -  iOS
+    -  Windows Phone
+    -  Tizen
+    -  Sailfish
+    -  Ubuntu
+    -  Fedora
+    -  OpenSUSE
+    -  CentOS
+    -  Debian
+    -  Arch
+    -  Gentoo
+
+Pasii in procesul de bootare - 
+    1.  Power On Self Test (POST)
+    2.  Initializarea hardware-ului
+    3.  Citirea bootloader-ului
+    4.  Citirea sistemului de operare
+    5.  Citirea kernel-ului
+    6.  Citirea initializarii sistemului
+    7.  Citirea sistemului de fisiere
+    8.  Citirea aplicatiilor
+
+    -  BIOS - Basic Input/Output System
+    -  UEFI - Unified Extensible Firmware Interface
+    -  MBR - Master Boot Record
+    -  GPT - GUID Partition Table
+    -  Bootloader - GRUB, LILO, Windows Boot Manager
+    -  Kernel - Windows Kernel, Linux Kernel
+    -  Init - systemd, upstart, sysVinit
+    -  Filesystem - NTFS, FAT, ext2, ext3, ext4, BTRFS, XFS, ZFS
+    -  Applications - Windows, Linux
+
+    -  BIOS - Basic Input/Output System - 
+            -  programul care se ocupa de initializarea hardware
+
+Procesul de bootare - 
+    -  BIOS - Basic Input/Output System
+    -  UEFI - Unified Extensible Firmware Interface
+    -  MBR - Master Boot Record
+    -  GPT - GUID Partition Table
+    -  GRUB - Grand Unified Bootloader
+    -  LILO - Linux Loader
+    -  U-Boot - Universal Bootloader
+    -  rEFInd - EFI Boot Manager
+    -  rEFIt - EFI Boot Manager
+    -  Clover - EFI Boot Manager
+    -  Coreboot - open-source firmware
+    -  SeaBIOS - open-source firmware
+    -  OpenBIOS - open-source firmware
+
+Procesul de bootare - 
+    -  BIOS - Basic Input/Output System
+            -  partea principala a firmwareului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a firmwareului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  UEFI - Unified Extensible Firmware Interface
+            -  partea principala a firmwareului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a firmwareului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  MBR - Master Boot Record
+            -  partea principala a firmwareului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a firmwareului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  GPT - GUID Partition Table
+            -  partea principala a firmwareului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a firmwareului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+
+Controller - dispozitiv hardware care se ocupa de
+        comunicarea dintre un dispozitiv hardware si un alt dispozitiv hardware
+        aparut din nevoia de o oarecare modularitatte si abstractizare a resureselor hardware 
+
+Tipuri de controlere hardware:
+    -  controlere pentru placa video
+    -  controlere pentru placa de retea
+    -  controlere pentru placa de sunet
+    -  controlere pentru placa de baza
+
+Tipuri de controlere software:
+    -  controlere generice
+    -  controlere specifice
+    -  controlere de tip monolitic
+    -  controlere de tip modular
+    -  controlere de tip microkernel
+    -  controlere de tip hybrid
+
+    -  controlere de tip monolitic - 
+            -  partea principala a controlerului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a controlerului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  controlere de tip modular - 
+            -  partea principala a controlerului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a controlerului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: stabilitatea sistemului
+            -  dezavantaje: viteza de rulare
+
+    -  controlere de tip microkernel - 
+            -  partea principala a controlerului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a controlerului este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului
+
+    -  controlere de tip hybrid - 
+            -  partea principala a controlerului este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a controlerului este incarcata
+            in memorie si ruleaza in user space
+
+Viteze UniversalSerialBus:
+                • USB 1.0 - 12Mbps
+                • USB 2.0 - 480Mbps
+                • USB 3.0 - 5Gbps
+                • USB 3.1 - 10Gbps
+                • USB 3.2 - 20Gbps
+
+        TPM (Trusted Platform Module) este un standard international pentru un procesor
+criptografic capabil sa stocheze chei criptografice (de criptare).
+O data criptat discul,cheile vor fi stocate în acesta si protejate pe baza unei parole.
+        Daca unitatea de stocare va fi mutata pe alt calculator, atacatorul nu 
+va putea vedea datele. 
+        Doar modulul TPM ce stocheaza acele chei va putea vizualiza continutul unitatii de stocare.
+        Modulul TPM trebuie activat din BIOS, ca si virtualizarea.
+
+Placa de baza - 
+    -  componenta hardware care se ocupa de comunicarea dintre 
+    toate componentele hardware ale unui calculator
+
+    -  chipset - 
+            -  partea principala a placi de baza este incarcata
+            in memorie si ruleaza in kernel space
+            -  partea secundara a placi de baza este incarcata
+            in memorie si ruleaza in user space
+            -  avantaje: viteza de rulare
+            -  dezavantaje: instabilitatea sistemului

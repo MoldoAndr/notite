@@ -1,0 +1,27 @@
+Registre 
+    Segment             - CS,DS,ES,XS
+    Use                 - IP, FLAGS(carry, parity, auxiliary carry (or half carry), zero and sign flags)
+    General Purpose     - AX, BX, CX, DX
+    Index               - SI, DI
+
+                        Zero Flag (ZF): This flag is set when the result of 
+                        an operation is zero. For example, after performing
+                        a subtraction, if the result is zero, the ZF flag is set.
+
+                        Sign Flag (SF): This flag is set when the result of 
+                        an operation is negative. It indicates whether the most 
+                        significant bit of the result is set or not.
+
+                        Carry Flag (CF): This flag is set when there is a 
+                        carry or borrow in arithmetic operations such as 
+                        addition or subtraction. It is also used in bitwise operations.
+
+                        Overflow Flag (OF): This flag is set when the result 
+                        of a signed operation overflows the range of a signed 
+                        integer. It indicates that the result is too large or 
+                        too small to be represented in the given number of bits.
+
+                        Auxiliary Carry Flag (AF): This flag is used in binary-coded 
+                        decimal (BCD) arithmetic operations. It is set when there 
+                        is a carry from the lower nibble (4 bits) to the higher 
+                        nibble during addition or subtraction.
