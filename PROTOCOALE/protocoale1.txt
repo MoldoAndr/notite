@@ -1,0 +1,170 @@
+Retea de calculatoare - colectie interconectata de calculatoare autonome
+            - formata din echipamente si legaturi
+            - se utilizeaza un set comun de reguli, cu alte cuvinte un protocol
+            - interconectate prin conexiuni digitale
+    resurse - fizice - calculatoare
+            - logice - software
+            - informationale - baze de date
+    modelul unei baze de date moderne
+            - servere cu multa putere de procesare
+            - toate serverele conectate la o baza de date
+    resurse partajate
+            - resurse fizice
+                - utilizarea comuna a unitatilor de discuri
+                - operatiuni de partajare
+            - resurse logice
+                - ansamblu de programe sistem sau aplicatii
+                - situate pe un spatiu de stocare partajabil
+                - actualizare rapida
+                - dezavantaj - realizare riguroasa
+            - resurse informationale
+                - baze de date, fisiere
+    componente 
+            - hardware 
+                - medii de transmisie   - cablu de cupru, fibra optica
+                - dispozitive speciale  - placi de retea, modemuri, switch-uri
+            - software
+                - protocoale de comunicatii
+    
+    Arhitecturi
+        - peer-to-peer
+            - toate entitatile sunt tratate in mod egal
+            - nodurile sunt atat clienti cat si servere
+            - costuri reduse
+            - recomandate pentru
+                - putini utilizatori
+                - intr-un mediu restrans
+        - client-server
+            - server dedicat - unitate de calcul care functioneaza doar ca server, nefiind folosit drept client
+            - satisfacerea cat mai rapida a clientilor din retea
+            - resursele sunt localizate la nivelul serverului central  
+            - serverul poate fi un calculator obisnuit
+
+    Clasificare 
+        - In functie de aria de acoperire
+            - Near-me Area Network (NAN)
+            - Personal Area Network (PAN)
+            - Local Area Network(LAN) - rate mari de transfer de date
+                - Home (HAN)
+                - Storage (SAN)
+                - Wireless (WLAN)
+            - Metropolitan Area Network (MAN)   - IEE 802.16  < 50km
+                - Campus Area Network (CAN)
+                - Backbone Network
+            - Wide Area Network (WAN)           - IEE 802.20  < 150km
+                - arie mare de acoperire
+                - Enterprise private Network
+                - Virtual Private Network
+            - Internet
+                - retea la nivel planetar
+                - interconectare retele de tipuri diferite
+                - suita de protocoale TCP/IP
+                - globalizare
+        - In functie de scop 
+            - Intranet
+                - retea / set de retele interconectate 
+            - Extranet
+                - retea externa unei retele locale
+            - Internet
+            - Darknet
+        - In functie de tehnologia de transmisie
+            - pair-to-pair
+            - magistrala
+            - inel
+            - stea 
+            - ierarhica
+            - arborescenta
+            - mesh
+            - hibrida
+    
+    ISP - Internet Service Provider
+
+Reteaua Wireless / Mobile
+        - segment in cmntinua dezvoltare
+        - aplicatii diverse, inclusiv in domeniul militar
+        - categorii     - LAN / PAN(Bluetooth) / MAN
+        - reteaua celulara 1G/2G/3G/4G/5G
+
+
+OSI MODEL - Open System Interconnection 
+    -
+     7 layers
+                7 -   Application layer       - operation of protocols and formatting tools
+                                            - SMTP - Simple Mail Transfer Protocol
+                                            - HTTP - Hyper Text Transfer Protocol
+                6 -   Presentation layer      - manipulates data before it can be used
+                                            - data ENCRYPTION and COMPRESSION
+                                            - secure trasmsoission    
+                5 -   Session layer           - communication commence
+                                            - session length
+                                            - security function
+
+                4 -   Transport layer         - integrity control of the data
+                                            - controls the flow of data
+                                            - error control packets        
+                                            - TCP (Transmission Control Protocol), se creeaza standardul TCP/IP
+
+                3 -   Network layer           - data transfer between devices
+                                            - role: create and mantaion stable connection
+                                            - data is divided into packets 
+
+                2 -   Data Link layer         - connection where the physical layer exists
+                                                    - Media Access Control
+                                                    - Logical Link Control
+                                            - encapsulates digital signals into data packets
+                                            - Ethernet as example
+
+                1 -   Physical layer          - physical communication medium with various channels
+
+    - disadvantages  
+        - outdated, is used the TCP/IP model
+        - redundant elements
+        - DEPRICATED
+    - advantages
+        - troubleshooting
+        - marketing
+        - software development
+        - security awareness
+
+TCP/IP Model 
+        - concise version of the OSI model
+        - contains 4 layers
+        - main work : transfer data from a computer to another
+        - TCP and IP - differnet protocols of the Computer Netwroks
+        - TCP   - Transmission Control Protocol
+        - IP    - Internet Protocol
+        - UDP - User Diagram Protocol
+        - way of work:
+                - divides the data into packets
+                - the packets are being recombined at the receiver's end
+                - data is divided into 4 layers
+        - LAYERS 
+                - Layer 1   - Physical Layer
+                                    - responsible for generating data
+                                    - requesting connections
+                - Layer 2   - Data Link Layer
+                                    - identifying the protocol
+                                    - error prevention
+                                    - framing
+                                    - Ethernet IEEE 802.2 - protocol
+                - Layer 3   - Internet Layer
+                                    - defines the protocols
+                                - IP : responsible for  - delivering packets from the source 
+                                                        - by looking at the IP adresses
+                                                        - versions: IPv4 and IPv6
+                                                        - IPv4 - most used, starts to be deprecated
+                                - ICMP : Internet Control Message Protocol
+                                                        - providing hosts within IP datagrams
+                                - ARP : Address Resolution Protocol
+                                                        - find the hardware address of the host from a known IP address
+                - Layer 4   - Transport Layer 
+                                        - exchange acknowledgements
+                                        - retransmit missing packets
+                                        - TCP and UDP at this level
+                            - HTTPS - Hyper Text Transfer Protocol Secured
+                            - SSH - Secure Shell
+                                        - terminal emulations software  
+                                        - mentain encrypted connection
+                                        - sets up a secure connection
+                            - NTP - Network Time protocol
+                                    - sync clocks                                                                            

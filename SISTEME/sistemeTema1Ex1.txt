@@ -1,0 +1,30 @@
+Exercitiul 1 - Configurare GRUB
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:
+
+    Comenzi initiale:
+        sudo nano /etc/default/grub          - comanda pentru deschidere fisier
+        GRUB_TIMEOUT=10                      - se modifica din fisier timeout-ul
+        GRUB_TIMEOUT_STYLE=menu              - se modifica sau se adauga aceasta linie
+    
+    Se salveaza prin CTRL+X => YES
+
+    Se copiaza poza in folderul /boot/grub:
+        sudo cp calea/catre/imagine/background.png /boot/grub/background.png
+    sugestie imagine: https://abload.de/img/bootpicgbfmt.png - functionala, 
+    GRUB accepta doar o anumita rezolutie  
+    
+    Se redeschide fisierul cu comanda
+        sudo nano /etc/default/grub
+
+    Se adauga linia de cod:
+        GRUB_BACKGROUND="/boot/grub/background.png"
+    
+    Se salveaza prin CTRL+X => YES
+    
+    Se da update prin comanda:
+        sudo update-grub
+    
+    Se da reboot prin comanda:
+        sudo reboot

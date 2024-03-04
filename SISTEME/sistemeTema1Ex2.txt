@@ -1,0 +1,8 @@
+Exercitiul 2 - Back-up MBR
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:
+
+    Navigare in locatia dorita
+    Creare fisier de backup
+        sudo dd if=/dev/sda of=backup.bin bs=512 count=1

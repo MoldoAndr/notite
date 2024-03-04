@@ -1,0 +1,19 @@
+Exercitiul 3 - fdisk
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:  
+    Creare initiala a celor 2 partitii din VB
+    CTRL+ALT+T pentru terminal
+    (a)  
+        sudo fdisk /dev/sdc  (daca noua partitie se denumeste sdc)
+        n       - pentru creare de partitie
+        alegere dimensiune
+        n       - pentru creare de partitie
+        alegere dimensiune
+        w       - pentru salvare modificari
+    (b)
+        sudo gdisk /dev/sdd
+        n       - de 7 ori pentru creare partitii
+        w       - pentru salvare
+
+    lsblk - pentru afisare partitionare
