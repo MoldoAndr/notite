@@ -1,0 +1,117 @@
+arhitectura unui sistem de calcul reprezinta
+	structura detaliata pentru	
+		proiectarea ISA - Instruction Set Architecture
+		proiectarea uarch - microarhitecturii
+		proiectarea logica - ex. : VHDL
+		implementarea propriu-zisa
+
+Intel 8086 -> 8088 -> 1978
+	registrii pe 16biti 
+	magistrala de date pe 16/8 biti
+	magistrala de adrese pe 20 de biti
+
+Magistrala = cale de comunicatie unidirectionala sau bidirectionala	
+	     	prin care se transmit date 
+	     - latimea de banda a unei magistrale - cantitatea de date 
+						transmisa in unitatea de timp
+	     - protocoale uzuale :
+				== PCIe
+					(Peripheral Component Interconnect Express) 
+					- pentru periferice
+					- foarte rapid
+					- placa video, de sunet etc.
+				== USB
+					(Universal Serial Bus)
+					- pentru periferice
+				== SATA	
+					(Serial ATA)
+					- stocare
+				== ETHERNET
+					- pentru internet
+				== Memory Bus Protocol	
+					- protocolul intre CPU si RAM
+
+magistarle : 
+	de date: transporta datele
+	de adrese: transporta adrese
+	de control: buna functionare
+
+coprocesor : 
+	auxiliar pentru calcule 
+	contine 80 de biti pentru precizie extinsa
+	transformat mai apoi in Arithmetic Logic Unit(ALU)
+	exemplu : Intel 8087 
+
+
+Intel 80286
+	introduce protectie
+	registrii segment devin pointeri in tabele cu descriptori 
+	
+IA32 - Intel Architecture 32 bits
+IA64 - Intel Architecture 64 bits - > procesoarele de astazi
+
+de la Intel 80487 coprocesorul devine integrat	
+	si apare memorie cache
+
+tipuri de memorii
+
+	REGISTRU	
+		pentru operatii/stocare de adrese/valori	
+		in procesor	
+		cea mai rapida
+	CACHE			
+		pentru stocare de adrese frecvent deschise 
+		pentru stocare de instructiuni frecvent utilizate
+		stocat intre procesor si ram
+		de obicei mica (cativa kb)
+	RAM	
+		storage temporar	
+		memorie volatila
+		mai mare decat cache, dar mai inceata
+		se incarca sistemul de operare in ea
+	ROM	
+		nevolatila
+		inceata
+		se stocheaza datele in ea
+	
+tipuri de procesoare
+	
+	procesoare x86  - procesoare care sunt compatibile cu 
+			Intel8086 referitor la setul de instructiuni	
+	procesoare x86 x64
+			- procesoare x86 cu registrii de 64 de biti	
+			- procesoare cu performanta mai buna, memorii mai mari	
+			- pe procesoarele x64 se pot rula programe x32
+	procesoare x86 x32 
+			- procesoare x86 cu registrii de 32 de biti
+
+Componentele unui procesor
+	== CONTROL UNIT 
+		- coordoneaza operatiunile
+	== ARITHMETIC LOGIC UNIT (ALU)
+		- efectuarea operatiilor aritmetice	
+	== EXECUTION UNITS	
+		- executie instructiuni tip virgula mobila / operatii vectoriale
+	== REGISTRE 
+		- locatii de memorie interne	
+	== CACHE UNIT
+		- stocarea instructiunilor si a adreselor frecvent utilizate
+	== MEMORY CONTROLLER
+		- gestioneaza accesul la memoria ram
+
+REGISTRE
+	
+	AX  	=	Acumulator 			- operatii logice
+	BX		=	General-purpose		- storage and calculation
+	CX		=	General-purpose		- storage and calculation
+	DX		=	General-purpose 	- storage and calculation
+	BP		=	Base pointer 		- data access
+	SP		=	Stack pointer		- top of the stack
+	IP 		= 	Instruction pointer - next instruction
+	FLAGS 	=	Descriptive flags	- result of previous operation
+	SI 		=	Index register 		- Source Index
+	DI 		=	Index register		- Destination Index
+	CS 		= 	Segment register	- instruction address
+	DS 		=	Segment register	- data address
+	SS 		=	Segment register	- data segment
+	ES 		=	Segment register	- stack segment

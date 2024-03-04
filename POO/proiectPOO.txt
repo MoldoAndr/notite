@@ -1,0 +1,46 @@
+Motivația alegerii proiectului:
+    
+        Am ales să dezvoltăm aplicația "GestoResto" pentru
+    a răspunde unei nevoi stringente din industria ospitalității,
+    și anume gestionarea eficientă a restaurantelor. 
+    Scopul nostru este de a oferi proprietarilor și managerilor 
+    de restaurante o soluție completă și ușor de utilizat pentru
+    a gestiona toate aspectele cheie ale afacerii lor.
+    Ne propunem să facilităm gestionarea comenzilor, a meniului,
+    a rezervarilor si a reviewurilor contribuind astfel la
+    creșterea eficienței și a satisfacției clienților.
+
+Arhitectura propusă pentru implementare:
+
+    Interfata managerului: Acest modul va gestiona interactiunea managerului
+        restaurantului cu baza de date printr-o aplicatie in ElectronJS.
+
+    Interfața utilizatorului (UI): Acest modul va gestiona interacțiunea 
+        cu utilizatorul și va afișa toate funcționalitățile disponibile ale aplicației web.
+
+    Gestionarea comenzilor: Aici vor fi gestionate comenzile primite de la clienți, 
+        inclusiv procesarea, modificarea și finalizarea acestora.
+
+    Managementul rezervarilor: Acest modul va ține evidența rezervarilor si a 
+        meselor ocupate/libere, va permite adaugarea și eliminarea de rezervari și 
+        va genera alerte în cazul în care este plina locatia.
+
+    Gestionarea reviewurilor: Acest modul va stoca toate reviewurile de pe toate
+        platformele si va afisa sugestii de inbunatatire a calitatii experientei.
+
+Modalitatea de implementare a funcționalităților:
+
+    Dezvoltarea interfeței utilizatorului cu ajutorul platformei Workpress pentru
+        o experiență de utilizare fluidă și interactivă.
+
+    Backend-ul aplicației va fi dezvoltat folosind un limbaj de programare robust, 
+        precum  Node.js si un plugin de WP pentru a gestiona logica și interacțiunea cu baza de date.
+
+    Baza de date va fi proiectată și implementată folosind un sistem de gestionare a 
+        bazelor de date relaționale, PostgreSQL, pentru a asigura persistența și consistența datelor.
+        Legatura dintre site si baza de date se va face printr-un plugin de Wordpress denumit HyperDB 
+        sau WP DB Driver. 
+
+    Aplicația va fi construită folosind o arhitectură modulară și scalabilă, 
+        pentru a permite extinderea și adaptarea ulterioară la nevoile și
+        cerințele specifice ale fiecărui restaurant.
