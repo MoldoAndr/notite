@@ -1,0 +1,144 @@
+    Context : Fiecare functie are propriul stack frame, 
+        un stack frame este o portiune din stiva de apel care 
+        apartine unei functii in care sunt stocate 
+                   - base pointer
+                   - stack pointer
+                   - variabile locale
+                   - adresa de return
+                   - parametrii
+                   - registrii salvati
+    Functiile nu pot iesi din stackframe-ul propriu
+        din acest motiv, este nevoie de o adresa de 
+        return pentru a se cunoaste adresa la care sa 
+        revina functia dupa terminare.
+
+
+    Functie suma in c:
+    
+            int sum(int a, int b) 
+            {
+                return a + b;
+            }
+
+    Echivalentul in assembly:
+
+        sum:
+            ; Prologue
+            push    ebp          ; Save the current base pointer
+            mov     ebp, esp     ; Set the base pointer to the current stack pointer
+            sub     esp, 4       ; Allocate space for local variables (if any)
+
+            ; Function body
+            mov     eax, [ebp+8] ; Load the first argument (a) into eax
+            add     eax, [ebp+12]; Add the second argument (b) to eax
+
+            ; Epilogue
+            mov     esp, ebp     ; Restore the stack pointer
+            pop     ebp          ; Restore the base  pointer
+            ret                  ; Return
+
+Prologue:
+
+    push ebp: 
+            Pushes the current base pointer onto the stack to save it.
+    
+    mov ebp, esp: 
+            Moves the stack pointer (esp) into the base pointer (ebp). 
+            This sets up the base pointer for accessing parameters and local variables within the function.
+    
+    sub esp, 4: 
+            Allocates space on the stack for local variables. 
+            In this case, assuming we're dealing with 32-bit integers, 
+            we allocate space for two integers, each occupying 4 bytes.
+
+Function Body:
+
+    mov eax, [ebp+8]: 
+            Moves the value of the first argument (a)
+            into the eax register. In the x86 calling convention, 
+            function arguments are typically passed via registers or the stack. 
+            Here, it's accessing the first argument relative to the base pointer.
+    
+    add eax, [ebp+12]: 
+            Adds the value of the second argument (b) 
+            to the eax register. Similar to the previous instruction, 
+            it accesses the second argument relative to the base pointer.
+    
+Epilogue:
+
+    mov esp, ebp:
+            Restores the stack pointer to its 
+            original value before the function call. 
+            This effectively deallocates the space allocated for local variables.
+
+    pop ebp: 
+            Restores the previous base pointer by popping it off the stack.
+
+    ret: 
+            Returns control to the calling function. The ret 
+            instruction pops the return address from the stack and jumps to it.
+
+So, in summary, the stack processes in this assembly code involve saving and restoring 
+the base pointer (ebp), allocating space for local variables, accessing function arguments and 
+returning control to the calling function.
+
+Componente functionale in cadrul unui sistem de calcul
+
+        - arhitectura clasica:
+                        - procesor cu : ALU
+                                        Unitate de timp si de control
+                                        Registrii
+                                        Interfete de comunicatie
+                        - Magistrale
+                        - Periferice ( SSD, HDD, mouse, keyboard, screen)
+                        - RAM Memory
+
+        Procesorul
+                - cea mai importanta componenta
+                - prezinta o suita de subunitati
+                - ALU - circuit digital combinational care effectueaza operatii aritmetice
+                - unitatea de control - control flux de date
+                - registrul IP : adresa de memorie a urmatoarei instructiuni
+       
+        Memoria
+                - contine instructiunile pe baza carora functioneaza Procesorul
+       
+        Perifericele 
+                - stocare prin intermediul disp. de intrare
+                - directionare catre un dispozitiv de iesire
+        
+        Organizarea unui sistem de calcul
+
+                           Arhitectura sistem de calcul
+                                        |
+                    ----------------------------------------
+                    |                                      |
+   Arhitectura setului de instructiuni     Arhitectura sistemului hardware(HSA)
+
+        Arhitectura setului de instructiuni
+                - acord cu privire la comunicarea intre procesor si un program software
+                - prezinta diferite moduri de rulare a procesorului pentru versiuni vechi
+                - prezinta urmatoarele componente:
+                        - instruciuni
+                        - moduri de adresare
+                        - formatul datelor
+                        - registrii disponibili
+                        - valori de stare (FLAGS)
+                        - exceptii      - software
+                        - intreruperi   - hardware
+                - tipuri
+                        - Stack (deprecated)
+                        - Accumulator (deprecated)
+                        - General-purpose registers
+                                - Load/Store (register-register)
+                                        - actionare asupra registrilor doar prin stocare si incarcare
+                                - Register-memory
+                                        - orice instructiune poate accesa memoria principala
+                        
+                        - RISC (Reduced Instruction Set Computing) 
+                                - Load/Store
+                                - ARM
+                        - CISC (Complex Instruction Set Computing)
+                                - register-memory
+                                - x86
+                                

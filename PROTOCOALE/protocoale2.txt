@@ -1,0 +1,194 @@
+MAC Address (Media Access Controll)
+    - syntax: AB:CD:12:34:56:BB
+    - unique identifier of a network controller
+    - has 48-bits
+        - first 24-bits : Organisationally Unique Identifier (OUI) - of the producer
+            - first byte, last bit : unicast (0) / multicast (1) 
+            - first byte, last but one bit : globally unique (0) / localy administred (1)
+        - last 24-bits  : Network Interface Controller (NIC) Specific
+    - roles : Identification, Layer 2 of the OSI, Switching, Security
+    - broadcast MAC Address : FF:FF:FF:FF:FF:FF
+
+IP Address (Internet Protocol)
+    - IPv4 standard : a.b.c.d  | a,b,c,d [0,255], a!=0          - 32-bit  - 4.3 bilion available
+    - IPv6 standard : 2001:0db8:85a3:0000:0000:8a2e:0370:7334   - 128-bit
+    - unique for: Internet Service Providers
+    - not unique for: Local Users
+    - functions: 
+            - identifies the host's network Interface
+            - provide the location of the host in the network
+    - subnetting: 
+        - dividing the IPv4 address into more subnetworks
+        - same subnet: same group of the most significant bytes
+        - subnet mask : determines which part is the host portion 
+                            and which part is the network portion
+
+Firewall    - network security device or software application that monitors
+                and controls incoming and outgoing network traffic 
+                based on predetermined security rules
+            - primary purpose of a firewall is to establish a barrier between
+                a trusted internal network and untrusted external networks
+            -types: 
+                - Hardware Firewall: Typically a standalone device, 
+                    such as a router or dedicated firewall appliance,
+                    that is placed at the perimeter of a network to 
+                    filter traffic before it enters or leaves the network.
+                - Software Firewall: Installed on individual devices or servers, 
+                    such as personal computers or servers, to filter traffic.
+                    Operating systems often come with built-in firewall software 
+                    that can be configured to control inbound and outbound traffic.
+            - methods used:
+                - Packet Filtering: Examines each packet of data passing 
+                    through the firewall and decides whether to drop or 
+                    allow it based on predetermined rules, such as source 
+                    and destination IP addresses, ports, and protocols.
+                - Stateful Inspection (Stateful Firewall): Keeps track of 
+                    the state of active connections and uses this information 
+                    to make decisions about which packets to allow or block. 
+                    This method offers better security by understanding the 
+                    context of traffic flows.
+                - Proxy Servers: Acts as an intermediary between internal and 
+                    external networks, intercepting and inspecting traffic 
+                    before forwarding it. Proxy servers can provide additional 
+                    security by hiding internal IP addresses and filtering content
+                - Application Layer Filtering: Analyzes traffic at the application
+                    layer of the OSI model, allowing administrators to create more 
+                    granular rules based on specific applications or services.
+
+SSID    - Service Set Identifier.
+        - unique identifier that allows wireless devices to connect 
+            of a specific wireless network. 
+        - when searching for available Wi-Fi networks on your device, 
+            see a list of SSIDs representing different networks. 
+        - each SSID is typically chosen by the network administrator or the owner 
+            of the wireless router and can be customized to help users identify
+            and distinguish between different networks.
+
+
+NAT     - Network Address Translation
+        - process used in computer networking to translate private IP
+            addresses used within a local area network (LAN) into public IP addresses 
+            used on the internet. 
+        - allows multiple devices within a private network to share a 
+            single public IP address, which helps conserve the limited number 
+            of available public IP addresses
+        - Static NAT: 
+            - maps a private IP address to a single public 
+                IP address on a one-to-one basis.
+        - Dynamic NAT
+            - maps private IP addresses to public IP addresses
+                from a pool of available addresses on a
+                one-to-one basis, dynamically assigning them as needed.
+        - PAT (Port Address Translation) or NAT Overload
+            - maps multiple private IP addresses to a single 
+                public IP address using different port 
+                numbers to distinguish between the connections.
+
+Host    - any device or computer system 
+            that is connected to a network and 
+            can send or receive data
+
+Unicast:
+    - refers to a communication pattern where data is 
+        sent from one sender to one specific receiver.
+    - the sender knows the exact address 
+        (typically the MAC address or IP address) of the intended recipient.
+    - used in point-to-point communication scenarios, 
+        such as when a user accesses a website or sends an email.
+
+Multicast:
+    - refers to a communication pattern where data is
+        sent from one sender to multiple specific receivers 
+        who have expressed interest in receiving the data
+    - the sender sends a single copy of the data, 
+        which is then replicated by the network infrastructure and 
+        delivered to multiple recipients
+    - often used for applications such as streaming multimedia content, 
+        video conferencing, or distributing software 
+        updates to multiple devices simultaneously.
+
+Broadcast:
+    - refers to a communication pattern where data 
+        is sent from one sender to all devices within the network.
+    - the sender sends a single copy of the data, 
+        and it is delivered to every device within the network segment.
+    - typically used for tasks such as network discovery, 
+        where a device needs to find other devices or services 
+        available on the network without knowing their specific addresses.
+    - While broadcast can be useful for certain tasks, 
+        it can also generate unnecessary network traffic if 
+        not used judiciously, potentially impacting network performance.
+
+
+
+Router
+    Components of a router:
+        - CPU 
+        - ROM
+        - Flash
+        - Non-Volatile RAM
+        - RAM
+        - Interfaces 
+        - Ports 
+        - NAT
+        - Firewall
+
+Interface:
+        - physical / logical
+        - physical interfaces : ports
+        - logical interfaces : logical interfaces
+                        - provide additional functionality
+                        - provide segmentation
+
+Port:
+        - specific endpoint
+        - physical connector
+        - always physical
+
+Common Network Devices
+
+    Hub:
+        - basic networking device that connects multiple computers or 
+        - other network devices in a local area network (LAN). 
+        - It operates at the physical layer (Layer 1) of the OSI model.
+        - receive data packets from one device and broadcast them to all 
+            other devices connected to the hub. 
+        - all devices on the network receive the data, regardless 
+            of whether it was intended for them or not.
+        - have been replaced by switches, which offer better performance and efficiency.
+
+    Router:
+        - networking device that forwards data packets between computer networks.
+        - operate at the network layer (Layer 3) of the OSI model.
+        - analyze the destination IP addresses of incoming data packets and determine
+            the best path for forwarding them to their destination. 
+        - use routing tables and algorithms to make these decisions.
+        - essential for connecting multiple networks together, 
+            such as connecting a home network to the internet or connecting 
+            different departments within a large organization.
+
+    Switch:
+        - networking device that connects devices within a LAN. 
+        - operates at the data link layer (Layer 2) of the OSI model.
+        - switches are more intelligent and can direct data packets specifically 
+            to the device they are intended for, 
+            rather than broadcasting them to all devices.
+        - maintain a MAC address table to keep track of 
+            which devices are connected to each of its ports, 
+            allowing for more efficient data transmission within the network.
+
+    Modem:
+        - converts digital signals from a computer into analog signals that 
+            can be transmitted over analog communication lines (such as telephone lines) and vice versa.
+        - commonly used to connect computers or local networks to the 
+            internet through an internet service provider (ISP). 
+        - modulate and demodulate signals to enable communication over the 
+            specific medium used by the ISP, such as DSL, cable, or fiber optic lines.
+
+    Access Point (AP):
+        - device that allows wireless devices to connect to a 
+            wired network using Wi-Fi. 
+        - acts as a central transmitter and receiver of wireless radio signals within a specified range.
+        - commonly used to provide wireless connectivity in homes, 
+            offices, and public spaces, allowing devices like laptops, 
+            smartphones, and tablets to access network resources without the need for physical cables
