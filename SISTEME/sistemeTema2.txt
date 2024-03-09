@@ -1,0 +1,283 @@
+=====TEMA SO=====
+	
+	1. Se considera fisierul fis5 cu urmatorul continut:
+	Nume:Ionescu
+	Prenume:Sorin
+	Care este comanda pentru afisarea: Ionescu Sorin
+	=========cut -f2,4 -d:==========================
+
+	2. Se considera fisierul fis6 cu urmatorul continut
+	Nume:Ionescu:Prenume:Florin
+	NUme:Petrescu:Prenume:Sorin
+	Care este comanda pentru a afisa:
+	Ionescu Florin 
+	Petrescu Sorin
+	========cut -f2,4 -d: | tr ':' ' '
+
+	comanda tr face un translate
+	poate lua ca parametrii atat consola, cat si fisieire
+
+	tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+	sisteme de operare
+	=======Inlocuieste toate literele mici cu litere mari===
+	 
+	# Exercitiu: Gasiti alte metode echivalente cu comanda de mai sus
+		
+	tr '{}' '()' < inputfile > outputfile
+	=======Inlocuieste toate {} cu ()
+	=======Metoda echivalenta: tr '{' ')' < inputfile | tr '}' '(' > outputfile 
+	
+	tr -cd "[:digit:]" < file
+	=======Sterge toate literele
+	=======Metoda echivalenta: tr -cd 1234567890 < file
+
+	# Exercitiu: Ce face urmatoarea comanda?
+
+	tr -ds "[0-9]" "[a-z][A-Z]" < fis1 > fis2 
+	=======Sterge toate cifrele
+	=======Metoda echivalenta: tr -cd "[a-z][A-Z] \n" < fis1 > fis2	
+
+	tr [:upper:] [:lower:]
+	=======Inlocuieste majusculele cu minuscule
+	=======Metoda echivalenta: tr "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "abcdefghijklmnopqrstuvwxyz" 
+		
+	1. Ce face comanda ?
+
+	echo "HELLO" |tr -t L l
+	===comanda inlocuieste L cu l
+
+	2. Afisati numarul de cuvinte de pe a 3-a linie a fisierului hello
+	sed -n '3p' | wc -w
+
+	echo "$(history | tail -n 2 | head -n 1 | cut -d' ' -f3- | wc -w)"
+
+	3. Scrieti o comanda care sa afiseze liniile de la 2 la 10 dintr-un fisier „in.txt“.
+	sed -n '2,10p' in.txt
+
+	4. Creati 3 fisiere, f1, f2, f3 cu urmatorul continut:
+	paste f1 f2 f3
+	cat f1 | tr '\n' '*' | sed 's/.$//' ; echo ; cat f2 | tr '\n' '*' | sed 's/.$//' ; echo; cat f3 | tr '\n' '*' | sed 's/.$//' ; echo
+	
+	1. Să se afișeze numărul de cuvinte al ultimei comenzi date în terminal.
+	echo "$(history | tail -n 2 | head -n 1 | cut -d' ' -f3- | wc -w)"
+	
+	3. Creați un alias numit lla care în momentul când este introdus in terminal să fie echivalent cu comanda ls -la.
+	alias lla="ls -la"
+
+	4. Având fișierele f1 și f2, efectuati cele necesare
+	join f1 f2 | cut -d' ' -f2,3,5 | tr ' ' ':'
+	join f1 f2 | sort -k5 -nr | cut -d' ' -f2,3,5 | tr ' ' ':'
+
+	5. Afișați inode-numberul pentru fișierul /home/student/fid1
+	ls -i /home/student/fid1 | cut -d' ' -f1
+	
+	6. Schimbati data și ora sistemului cu „21 iunie 1993 10:10“
+	sudo date --set="1993-06-21 10:10:00"
+
+	7. Instalați aplicația cmatrix. Ce face? Cum putem ieși?
+	instalare : sudo apt-get install cmatrix
+	aplicatia este o interfata diferita de terminal si prezinta
+	caractere ASCII la prima vedere ramdomly distributed
+	
+	8. Afișați sectorul 56 din partitia 1 de pe diskul /dev/sda.
+	sudo dd if=/dev/sda1 bs=512 count=1 skip=55 | hexdump --canonical
+	
+	9. Afisati ultimii 16 octeti ai sectorului100 de pe diskul /dev/sdb
+ 	sudo dd if=/dev/sda1 bs=512 count=1 skip=99 | hexdump --canonical | tail --bytes=100
+
+	10. Faceti modificarile necesare pentru a vi se afisa data curenta de fiecare data cand porniti terminalul
+	sudo vim ~/.bashrc
+	se adauga linia de cod
+		echo "$(date)"
+	se salveaza
+	se reactualizeaza cu 
+		sudo source ~/.bashrc
+	
+	11. Folosiți comanda cat pentru a concatena fiserele f1,f2 si f3 si puneti outputul in fisierul f_total.
+	cat f1 f2 f3 > f_total
+
+	12. Ce dimensiune(in KB) are home directory-ul userului curent?
+	du -s -k ~ | cut -d'/' -f1
+	
+	13. Afișați toate numele de fișierele din directorul curent criptate folosind cifrul caesar cu cheia 3
+	ls | tr 'A-Za-z' 'X-ZA-Wx-za-w'
+	
+	14. Afișați pe aceeași linie rândurile 1,2 și 10 din fișierul fiș2.
+	sed -n '1p' < fis2 | tr '\n\ ' '; sed -n '2p'  < fis2 | tr '\n' ' '; sed -n '10p' < fis2 | tr '\n' ' '
+	
+	15. Afișați Major version-ul pentru kernelul care rulează în sistem.
+	ls /boot | tail -n1 | cut -d'.' -f2
+
+	1. Pentru a șterge un fișier folosim comanda rm. Totuși, această comandă nu are implementată funcționalitatea de Recycle Bin din Windows. Folosind comenzile învățate în acest laborator, încercați să simulați comportamentul acestei funcționalități. (hint: alias )
+	alias rm="rm -i"
+	
+	3. Afișați conținutul directorului /usr, dar fiecare nume de fișier să fie scris cu litere mari.
+	ls --all --reccursive /usr/ | tr '[a-z]' '[A-Z]'
+
+	5. În fișierul /var/log/apt/history.log se rețin informații despre operațiunile efectuate de apt-get. Folosind comanda less și opțiunea de căutare, idetinficați data și ora la care ați instalat aplicația gparted
+ 	less /var/log/apt/history.log
+	/gparted
+	
+	6. Având următorul fișier:
+
+	Nume,Prenume,Varsta,Grupa,An,Medie
+	Vasile,Ion,20,C112A,2,9.5
+	Avram,Dan,26,C112F,2,8.12
+	Popescu,Ionut,32,C112A,2,9.1
+	Mihaila,Aurelian,22,C113B,3.9
+
+	Afișați, pe rând, următoarele informații:
+		
+		Pe câte un rând, Numele și Grupa fiecărui student
+		tail -n4 fis | cut -d'.' -f1,4
+		
+		Câți studenți avem descriși în fișier
+		cat fis | wc -l | awk '{print $1-1}'
+		
+		Prenumele tututror studenților, pe o singură linie, separate prin virgula.
+		cat fis | cut -d',' -f2 | tr '\n' ' ' | cut -d' ' -f2,3,4,5
+		
+		Creati un nou fisier care sa conțină Numele si Varsta fiecarui student.
+		cut -d',' -f1,3 fis | tail -n4 | tr ',' ' ' > nou
+
+	10. Afișați de cât timp este sistemul pornit, iar apoi, data și ora de când este pornit.
+	uptime; uptime -s
+	
+	Ne aflăm în directorul /home/dan. Care este calea absolută pentru calea relativă „../ioana/teme/2022/../2021/ex1.txt“
+	/home/ioana/teme/2021/ex1.txt
+	
+	Comanda realpath afiseaza calea absoluta a unui fisier sau a unui folder
+	
+	Ne aflăm în directorul /var/log. Dați exemplu de o cale relativă către /var/www/html
+	cd ../log/www/../ww/html
+	
+	Care este calea absolută pentru fișierul ~/Documents/./2021/../../Downloads
+	/home/user/Downloads
+
+	Afișați conținutul directorului curent pe o singură coloană
+	ls | tr ' ' '\n'
+	
+	Afișați conținutul directorului /etc astfel încât să se vadă dimensiunea fișierelor (long listing format)
+	ls -lla /etc
+
+	Afișați conținutul directorului curent în ordinea dimensiunii fișierelor
+	ls -S
+	
+	Afișați conținutul directorului părinte
+	ls ..
+	
+	Afișați detalii în 'long listing format' despre directorul /bin, nu despre conținutul acestuia.
+	ls --la /bin
+
+	Creați un director cu numele „my homework“
+	mkdir "my homework"
+
+	Creați următoarea cale de directoare dintr-o singură comandă /home/<user>/teme/2022/so. („make parent directories as needed“)
+	mkdir --parents /home/andrei/teme/2022/so.
+
+	Creați următoarea cale „/home/<user>/muzica/pop/2022“, câte un director o dată, folosind doar căi relative.
+	mkdir muzica; mkdir ./muzica/pop; mkdir ./muzica/../muzica/pop/2022
+
+	Creați fișierul „in.txt“ în directorul curent folosind comanda touch.
+	touch in.txt
+		
+	După dezarhivare, ștergeți arhiva descărcată(test.zip)
+	rm test.zip
+		
+	Mutați directorul books din lab3_2022/Documents/teme în lab3_2022/Documents/
+		
+		Folosind căi absolute
+		mv /home/andrei/lab3_2022/Documents/books /home/andrei/lab3_2022/Documents
+		
+		Mutându-vă în directorul lab3_2022/Documents/teme și folosind căi relative
+		cd home/andrei/lab3_2022/Documents/teme ; mv books ..	
+		
+		Redenumiți fișierul queen_bohemian_rhapsody.mp3 din lab3_2022/Music/rock. Numele final va fi bohemian_rhapsody_queen.mp3
+		mv queen_bohemian_rhapsody.mp3 bohemian_rhapsody_queen.mp3
+		
+	
+	Exercitiul 5 (cat,head,tail,wc)
+
+		Creați un fișier cu următorul conținut(folosind gedit, sau orice alt editor text):
+		nano fork.c	
+	
+		Afișați în terminal conținutul acestui fișier indicând numărul fiecărei linii?	
+		cat --number fork.c
+	
+		Afișați numărul de linii din fișierul fork.c
+		wc -l < fork.c | cut -d' ' -f1
+
+		Afișați concatenat conținutul fișierelor fork.c și al fișierului /etc/resolv.conf
+		cat fork.c /etc/resolv.conf	
+		
+		Afișați conținutul fișierului fork.c folosind comanda cat, dar afișând și caracterele <tab> și <new line>.
+		cat --show-all fork.c	
+
+		Executați comanda: echo line{1..30} | tr " " "\n" > numbers.txt. Aceasta va crea un fișier cu 30 de linii numerotate. Vom înțelege mai bine ce face această comandă în laboratoarele următoare.
+		echo line{1..30} | tr " " "\n" > numbers.txt	
+
+		Afișați primele 7 linii din fișierul numbers.txt.
+		head -n7 < numbers.txt	
+
+		Afișați ultimele 13 linii din fișierul numbers.txt
+		tail -n13 < numbers.txt
+		
+		Afișați toate liniile cu excepția ultimelor 3 din fișierul numbers.txt
+		head -n-3 < numbers.txt
+
+		Afișați toate liniile din fișier, începând cu a patra din fișierul numbers.txt
+		tail -n+3 < numbers.txt
+
+		
+		Afișați primele 15 de caractere din fișierul /etc/fstab
+		head --bytes=15 /etc/fstab
+	
+		Afișați dimensiunea în caractere a celei mai lungi linii din fișierul fork.c (print the maximum display width)
+		wc --max-line-length --bytes fork.c | cut -d' ' -f1	
+
+		Afișați string-urile din fișierul mbr.img creat în laboratorul 2
+		strings mbr.img
+
+		Afișați șirurile de caracter mai lungi de 8 caractere ASCII consecutive din fișierul /bin/bash
+		strings -n8 /bin/bash
+
+		Vom folosi comanda less pentru a vedea log-ul de boot-are al sistemului. Fișierul /var/log/dmesg poate fi accesat doar de către un administrator, deci vom executa: sudo less /var/log/dmesg
+
+		Navigați prin log folosind săgeți/PageUP/PageDOWN
+
+		Căutați după string-ul sda pentru a găsi referințe la disk-ul /dev/sda
+		[    1.876408] kernel: sd 2:0:0:0: [sda] 46137344 512-byte logical blocks: (23.6 GB/22.0 GiB)
+		[    1.876427] kernel: sd 2:0:0:0: [sda] Write Protect is off
+		[    1.876430] kernel: sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+		[    1.876443] kernel: sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+		[    1.924893] kernel:  sda: sda1 sda2 < sda5 >
+		Pentru a indica către următoarele șiruri identificate apăsați tasta 'n'
+
+		Navigați la începutul fișierului folosind 'g' sau la sfârșitul acestuia folosind 'G'
+
+		Verificați cu ce parametri a fost pornit kernelul(căutați după „kernel: Command line“)
+		ieșiți din less folosind q
+
+				Comenzi Windows
+		Comenzile pentru Unix/Linux se aseamana intr-o anumita masura cu cele windows command prompt. O comparatie intre cele mai uzuale este:
+
+		Comenzi DOS	Comenzi Linux	Descriere
+		comanda /?	comanda --help	Obtinere informatii legate de o comanda
+		cd	cd	Schimbare director curent
+		chdir	pwd	Afiseaza directorul curent
+		cls	clear	Curata ecranul consolei
+		copy	cp	Copiaza un fisier
+		date	date	Afiseaza data sistemului
+		del	rm	Sterge un fisier
+		dir	ls	Afiseaza continutul directorului curent
+		edit	vim (sau alt editor)	Deschide un editor de texte
+		exit	exit	Iesire din consola
+		fc	diff	Compara doua fisiere si afiseaza diferentele dintre ele
+		find	find	Permite gasirea de fisiere
+		format	mke2fs sau mformat	Formateaza un disk
+		mem	free	Afiseaza memoria fizica existenta si cea ocupata in acel moment
+		mkdir	mkdir	Creeaza un director
+		more	more sau less	Afiseaza rezultatul unei comenzi pagina cu pagina
+		move	mv	Muta un fisier dintr-o locatie in alta
+		ren	mv	Redenumeste in fisier
+		time	date	Afiseaza ora sistemului

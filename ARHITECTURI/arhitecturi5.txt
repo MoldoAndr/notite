@@ -1,0 +1,46 @@
+GDB - GNU Debugger
+    - depanator pentru C/C++/assembly
+
+Tipuri de date fundamentale pentru IA32
+    
+    - DB    - 8 bits    - byte
+    - DW    - 16 bits   - word
+    - DD    - 32 bits   - double-word
+    - DQ    - 64 bits   - quad-word
+    - DT    - 80 bits   - ten
+
+    - Little endian : LSB - Least Address Memory
+
+    Comenzi GDB
+
+            h[elp]  -- ofera info
+            start   -- seteaza breakpoint la main
+            starti  -- seteaza breakpoint la prima instructiune
+            b[reak] -- seteaza breakpoint la o adresa specicfica
+            r[un]   -- incepe executabil
+            s[tep]i -- afisarea unei singure instructiuni
+            p[rint] -- afisare continut registru 
+                -- p $eax
+            i b     -- afiseaza breakpointurile setate
+            i r     -- valorile registrilor 
+            n i     -- executarea unei instructiuni
+            c       -- continue
+            finish  -- executia functiei curente
+        layout asm  -- afiseaza instructiunile urmatoare
+disassemble _start  -- observare offseturi instructiuni
+    x/nfu <adresa>  -- citire din memorie
+                    -- de la adresa <adresa>
+                    -- n unitati printate din memorie
+                    -- f - format:
+                            - d - intreg cu semn in decimal
+                            - s - sir de caractere 
+                            - i - asm
+                            - f - float
+                            - x - hex
+                    -- u - lungime:
+                            - b - 8bit  - byte
+                            - h - 16bit - half word
+                            - w - 32bit - word
+                            - g - 64bit - giant word
+                    - x/xb &a_byte - citire 1 octet de la adresa a_byte
+                                    si afisare in hex

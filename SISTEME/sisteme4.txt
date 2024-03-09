@@ -1,0 +1,32 @@
+Prima Retea 
+
+    Modificare stare 
+        Pornire Wireless
+            netsh interface set interface "Wireless Network Connection" ENABLED
+        Oprire
+            netsh interface set interface "Wireless Network Connection" DISABLED
+    Configurare IP Static
+        netsh interface ip set address name="Wireless Network Connection" static 172.20.0.222 255.255.0.0 172.28.0.1
+    
+    Comanda PING:
+        masoara timpul in care mesajul ajunge la destinatie
+        afiseaza o statistica
+        foloseste ICMP
+            Internet Message Control Protocol
+            contine mesaje de tip request si de tip reply
+
+        Site/Serviciu Web inaccesibil
+        ▪ verificare configuratie interfata de retea
+            ✔ verificare IP
+            ✔ verificare Default Gateway (DG)
+            ✔ verificare DHCP vs adresa statica
+            ✔ verificare DNS
+        ▪ verificare conectivitate
+            ✔ local
+            ✔ verificare DG – ping 172.28.0.1
+            ✔ verificare DNS – ping 172.28.0.3
+            ✔ extern (Internet)
+            ✔ verificare URL – ping www.mapn.ro
+            ✔ verificare server tinta – ping 11.11.11.11
+            ✔ verificare ISP – ping 8.8.8.8
+    

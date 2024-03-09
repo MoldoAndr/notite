@@ -25,10 +25,129 @@ change targetul default
 change targetul current
     systemctl isolate name.target
 
+";" 
+    inlantuire de scripturi
+
+ps
+    afisare proces parinte
+
+">"
+    directare output spre un fisier
+
 read 512 bytes from /dev/sda, from the third block, writes to sector.bin
     sudo dd if=/dev/sda bs=512 count=1 of=sector.bin skip=2
 
-USEFUL COMMANDS
+go to previous command 
+    ctrl + p
+
+go to next command
+    ctrl + n
+
+execute last command 
+    !!
+
+cautare istoric
+    history
+    ctrl + r
+
+Ctrl+c 
+    terminarea procesului interactiv curent / anularea comenzii
+    tastate în shell
+
+Ctrl+\ 
+    terminarea procesului interactiv curent
+
+Ctrl+d 
+    livrarea EOF (End of File) si închiderea shellului
+
+Alt+. 
+    completarea în shell a ultimului argument al ultimei comenzi
+
+Ctrl+a 
+    plasarea cursorului de editare la începutul comenzii
+
+Ctrl+e 
+    plasarea cursorului de editare la sfârs
+    itul comenzii
+
+Alt+b
+    plasarea cursorului un cuvânt înapoi
+
+Alt+f 
+    plasarea cursorului un cuvânt înainte
+
+Ctrl+u 
+    stergerea din pozitia curenta pâna la începutul comenzii
+
+Ctrl+k 
+    stergerea din pozitia curenta pâna
+    la sfârsitul comenzii
+
+Ctrl+d stergerea literei de sub cursor
+    (echivalent Delete)
+
+Alt+d 
+    stergerea cuvântului din fat,a cursorului
+
+Alt+Backspace 
+    stergerea cuvântului din spatele cursorului
+
+echo
+    afisare continut
+
+which
+    aflare executabil rulat asociat unei comenzi
+        ex : which ls => /bin/ls
+
+echo $$
+    afisare PID - Process Identifier
+
+overhead = cost de timp
+
+env sau export -p
+    toate variabilele definite in bash
+
+termenul de parsing: separatia comenzilor
+
+afisare continut mai multe foldere simultan ex:
+    ls laborator{1,2} - afiseaza continutul ambelor foldere
+
+declare
+    afisare variablie definite in bash
+
+type
+    afisare tip de comanda: interna/externa
+
+PATH    caile de cautare a fisierelor
+        executabile pentru comenzi
+PWD     directorul curent
+USER    numele utilizatorului curent
+HOME    directorul home al utilizatorului curent
+SHELL   shellul curent
+TERM    tipul de terminal folosi
+
+$       PID-ul procesului shell curent
+!       PID-ul celui mai recent proces din background
+?       codul de iesire al celei mai recente comenzi
+_       ultimul argument al celei mai recente comenzi
+
+CARACTERE SPECIALE
+?       se potriveste cu orice caracter o singura data
+
+*       se potriveste cu orice caracter de oricâte ori
+
+[...]   se potriveste cu orice caracter 
+        din setul de caractere 
+        dintre parantezele drepte
+
+Se poate face asignarea unei variablie o comanda astfel:
+    variabila=$(comanda)
+    var=$(ls)
+    afisare continut: echo $var
+
+
+
+
 ls	            Lists a directory’s content
 pwd	            Shows the current working directory’s path
 cd	            Changes the working directory
@@ -87,6 +206,6 @@ echo	        Prints a message as a standard output
 ln	            Links files or directories
 alias, unalias	Sets and removes an alias for a file or command
 cal	            Displays a calendar in Terminal
-apt-get	        Manages Debian-based distros package libraries
+apt-get	        Manages Debi`an-based distros package libraries
 dd              Copies the content of a file to another = if no parameters, prints to screen
 blkid           Prints the partitions ID's
