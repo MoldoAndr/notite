@@ -85,3 +85,53 @@ Explicatie detaliata a modelului ISO-OSI
         TCP/IP - 5 niveluri
         OSI teoretic
         TCP/IP folosit ca standard
+
+Adaugari ulterioare curs
+
+                                    structura unui mesaj
+-------------------------------------------------------------------------------------------------------
+|   segment   |     packet    |    frame     |                                               |*segment|
+| source port |   source IP   |  source MAC  |                                               |        |
+|  dest port  |    dest IP    |   dest MAC   |                      DATA                     |checksum|
+| 20-60 bits  |   20-60 bits  |  20-60 bits  |                                               |        |
+-------------------------------------------------------------------------------------------------------
+
+PDU - Protocol Data Unit - structura pachetelor de date din diferite layere
+    segment - Layer Transport
+    packet  - Layer Network
+    frame   - Layer Data Link
+
+Protocoale uzuale
+
+Layer 4 TCP/IP Model (Application):
+    HTTP        -   HyterText Transfer Protocol
+    HTTPS       -   HyperText Transfer Protocol Secured
+    DNS         -   Domain Name System
+    DHCP        -   Dynamic Host Configuration Protocol
+    SNMP        -   Simple Network Management Protocol
+    SMTP        -   Simple Mail Transfer Protocol
+    POP         -   Post Office Protocol
+    IMAP        -   Internet Message Access Protocol
+    Telnet      -   Teletype Network
+    SSH         -   Secure Shell
+    FTP         -   File Transfer Protocol
+    SCP         -   Secure Copy Protocol
+    NTP         -   Network Time Protocol
+
+Layer 3 TCP/IP Model (Transport):
+    TCP         -   Transmission Control Protocol
+    UDP         -   User Datagram Protocol
+
+Layer 2 TCP/IP Model (Network):
+    IP          -   Internet Protocol
+    IPv4        -   Internet Protocol v4
+    IPv6        -   Internet Protocol v6
+    ICMP        -   Internet Control Message Protocol
+    IGMP        -   Internet Group Management Protocol   
+    ARP         -   Address Resolution Protocol
+
+Layer 1 TCP/IP Model (Network Access):
+    Ethernet    -   802.3 -> combination of protocols
+    802.11      -   WiFi  -> combination of protocols
+    PPP         -   Point-to-Point Protocol
+    ATM         -   Asyncronous Transfer Mode
