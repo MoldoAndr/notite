@@ -14,14 +14,14 @@ IP Address (Internet Protocol)
     - IPv6 standard : 2001:0db8:85a3:0000:0000:8a2e:0370:7334   - 128-bit
     - unique for: Internet Service Providers
     - not unique for: Local Users
-    - functions: 
+    - functions:
             - identifies the host's network Interface
             - provide the location of the host in the network
-    - subnetting: 
+    - subnetting:
         - dividing the IPv4 address into more subnetworks
         - same subnet: same group of the most significant bytes
-        - subnet mask : determines which part is the host portion 
-                            and which part is the network portion
+        - subnet mask : determines which part is the host portion
+                    and which part is the network portion
 
 Firewall    - network security device or software application that monitors
                 and controls incoming and outgoing network traffic 
@@ -56,11 +56,11 @@ Firewall    - network security device or software application that monitors
                     granular rules based on specific applications or services.
 
 SSID    - Service Set Identifier.
-        - unique identifier that allows wireless devices to connect 
-            of a specific wireless network. 
+        - unique identifier that allows wireless devices to connect
+            of a specific wireless network.
         - when searching for available Wi-Fi networks on your device, 
-            see a list of SSIDs representing different networks. 
-        - each SSID is typically chosen by the network administrator or the owner 
+            see a list of SSIDs representing different networks.
+        - each SSID is typically chosen by the network administrator or the owner
             of the wireless router and can be customized to help users identify
             and distinguish between different networks.
 

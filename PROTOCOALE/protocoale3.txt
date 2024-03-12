@@ -1,0 +1,87 @@
+ISO     - Internet Standards Organization
+OSI     - Open Systems Interconnection
+
+Explicatie detaliata a modelului ISO-OSI
+    numar de niveluri: 7
+    fiecare nivel contribuie la o buna impartire a sarcinilor
+    eficienta sporita din cauza abstractizarii
+    divizarea in subtaskuri
+    organizare ierarhica
+        fiecare nivel utilizeaza servicii de la nivelul inferior
+        fiecare nivel pune la disp. servicii pentru cel superior
+    interoperabilitate - inlocuirea unui nivel nu afecteaza celelalte niveluri
+    arhitectura unei retele: totalitatea nivelurilor si a protocoalelor
+    stiva de protocoale: totalitatea protocoalelor ordonate
+    Niveluri:   
+        1 ===== Fizic
+        2 ===== Legatura de date
+        3 ===== Network/Internet
+        4 ===== Transport
+        5 ===== Sesiune
+        6 ===== Prezentare
+        7 ===== Aplicatie
+    ==Nivelul Fizic==
+        se ocupa de:
+            transmiterea datelor prin canalul de comunicatie(cablu/wifi)
+        probleme ce pot aparea:
+            defectiuni ale interfetelor mecanice(conectori), electrice(semnale)
+            sincronizarea intre emitator si receptor(termenul de delay)
+            medii de comunicatie bruiate
+    ==Nivelul Legatura de date==
+        se ocupa de:
+            transformarea nivelului fizic intr-un nivel de comunicatie fara erori
+            opereaza la nivel de cadre(frame)
+                - frame = date + control info
+            adresare fizica folosind adrese MAC
+            sincronizarea datelor
+            controlul erorilor
+            controlul fluxului
+    ==Nivelul Internet(Network)==
+        se ocupa de:
+            comunicatia dintre sistemele intermediare(routere)
+            opereaza la nivel de pachete
+                - pachet = frame + info
+            ruteaza pachete de la sursa la destinatie
+                rutare statica/dinamica 
+            directionarea pachetelor
+            adresare logica folosind IP
+            fragmentare si reasamblare pachete
+            IP - neorientat conexiune
+    ==Nivelul Transport==
+        se ocupa de:
+            garantarea livrarii datelor
+            comunicatie end-to-end
+            identificare procese comunicante
+            calitate servicii QoS (Quality of Services)
+            se ocupa de transmiterea de informatie intre capetele dispozitivelor
+            se asigura o transmitere de date corecta
+        TCP - Transport Control Protocol
+            - orientat conexiune
+        UDP - User Datagram Protocol
+            - neorientat conexiune
+    ==Nivelul Sesiune==
+        se ocupa de:
+            coordonarea si controlul dialogului intre procese
+            sincronizarea proceselor
+    ==Nivelul Prezentare==
+        se ocupa de:
+            sintaxa si semantica informatiilor transmise
+            reprezentarea caracterelor ASCII/UNICODE
+            reprezentarea numerelor
+    ==Nivelul Aplicatie==
+        se ocupa de:
+            transfer de fisiere
+            mesagerie electronica
+            sesiuni de lucru la distanta
+        Telnet
+            riscuri - date necriptate
+        DNS     Domain Name System 
+        FTP     File Transfer Protocol
+        SMTP    Simple Mail Transfer Protocol
+        HTTP    Hypertext Transfer Protocol
+    OSI vs TCP/IP
+ 
+        OSI - 7 niveluri
+        TCP/IP - 5 niveluri
+        OSI teoretic
+        TCP/IP folosit ca standard

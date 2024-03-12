@@ -64,12 +64,16 @@ tipuri de memorii
 		pentru stocare de instructiuni frecvent utilizate
 		stocat intre procesor si ram
 		de obicei mica (cativa kb)
-	RAM	
+	RAM	- > SRAM/DRAM
 		storage temporar	
 		memorie volatila
 		mai mare decat cache, dar mai inceata
 		se incarca sistemul de operare in ea
-	ROM	
+	ROM
+		pentru firmware
+		nu se poate suprascrie
+		aflata pe placa de baza
+	NVOL
 		nevolatila
 		inceata
 		se stocheaza datele in ea

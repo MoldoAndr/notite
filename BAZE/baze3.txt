@@ -1,0 +1,97 @@
+    Functions for Conversion from Time to Number/Text:
+    
+    TO_CHAR(date, format_mask):
+    Converts a date or timestamp to a string using the specified format mask.
+    Example: TO_CHAR(current_timestamp, 'YYYY-MM-DD HH24:MI:SS').
+    EXTRACT(unit FROM date):
+    Extracts the specified unit (year, month, day, etc.) from a date or timestamp.
+    Example: EXTRACT(YEAR FROM hire_date).
+    DATE_PART(unit, date):
+    Returns the value of the specified unit (year, month, day, etc.) from a date or timestamp.
+    Example: DATE_PART('day', current_date).
+    DATE_TRUNC(unit, date):
+    Truncates a date or timestamp to the specified unit (year, month, day, etc.).
+    Example: DATE_TRUNC('month', order_date).
+    TO_DATE(string, format_mask):
+    Converts a string to a date using the specified format mask.
+    Example: TO_DATE('2022-01-15', 'YYYY-MM-DD').
+    CURRENT_DATE():
+    Returns the current date.
+    Example: CURRENT_DATE.
+    CURRENT_TIMESTAMP():
+    Returns the current timestamp.
+    Example: CURRENT_TIMESTAMP.
+    AGE(end_date, start_date):
+    Calculates the difference in years, months, and days between two dates.
+    Example: AGE('2022-01-01', '1990-05-15').
+    TIMESTAMPDIFF(unit, start_date, end_date):
+    Calculates the difference between two timestamps in the specified unit.
+    Example: TIMESTAMPDIFF(MINUTE, start_time, end_time).
+    TIMESTAMPADD(unit, interval, timestamp):
+    Adds an interval to a timestamp.
+    Example: TIMESTAMPADD(DAY, 7, order_date).
+
+
+    Functions for Conversion from Number/Text to Time:
+    
+    TO_DATE(string, format_mask):
+    Converts a string to a date using the specified format mask.
+    Example: TO_DATE('2022-01-15', 'YYYY-MM-DD').
+    CAST(string AS timestamp):
+    Converts a string to a timestamp.
+    Example: CAST('2022-01-15 12:30:00' AS timestamp).
+    TO_TIMESTAMP(string, format_mask):
+    Converts a string to a timestamp using the specified format mask.
+    Example: TO_TIMESTAMP('2022-01-15 12:30:00', 'YYYY-MM-DD HH24:MI:SS').
+    EXTRACT(unit FROM timestamp):
+    Extracts the specified unit (year, month, day, etc.) from a timestamp.
+    Example: EXTRACT(HOUR FROM order_timestamp).
+    DATE_PART(unit, timestamp):
+    Returns the value of the specified unit (year, month, day, etc.) from a timestamp.
+    Example: DATE_PART('minute', order_timestamp).
+    DATE_TRUNC(unit, timestamp):
+    Truncates a timestamp to the specified unit (year, month, day, etc.).
+    Example: DATE_TRUNC('hour', created_at).
+    CURRENT_DATE():
+    Returns the current date.
+    Example: CURRENT_DATE.
+    CURRENT_TIMESTAMP():
+    Returns the current timestamp.
+    Example: CURRENT_TIMESTAMP.
+    TO_CHAR(timestamp, format_mask):
+    Converts a timestamp to a string using the specified format mask.
+    Example: TO_CHAR(current_timestamp, 'YYYY-MM-DD HH24:MI:SS').
+    TIMESTAMPDIFF(unit, start_timestamp, end_timestamp):
+    Calculates the difference between two timestamps in the specified unit.
+    Example: TIMESTAMPDIFF(MINUTE, start_time, end_time).
+
+
+    Functions Specific for Text:
+    
+    LOWER(string): Converts all characters in a string to lowercase.
+    UPPER(string): Converts all characters in a string to uppercase.
+    INITCAP(string): Capitalizes the first letter of each word in a string.
+    LENGTH(string): Returns the length of a string.
+    SUBSTRING(string FROM start_position [FOR length]): Extracts a substring from a string.
+    CONCAT(string1, string2): Concatenates two strings.
+    TRIM([LEADING | TRAILING | BOTH] [trim_characters FROM] string): Removes leading, trailing, or both 
+    leading and trailing characters from a string.
+    REPLACE(string, old_substring, new_substring): Replaces occurrences of a substring within a string with 
+    another substring.
+    REGEXP_REPLACE(string, pattern, replacement): Replaces occurrences of a regular expression pattern 
+    within a string with a specified replacement.
+    SPLIT_PART(string, delimiter, position): Splits a string into substrings based on a delimiter and returns 
+    the substring at the specified position.
+
+    Functions Specific for Numbers:
+    
+    ABS(number): Returns the absolute value of a number.
+    ROUND(number [, precision]): Rounds a number to the specified number of decimal places.
+    CEIL(number): Returns the smallest integer greater than or equal to a number.
+    FLOOR(number): Returns the largest integer less than or equal to a number.
+    POWER(base, exponent): Raises a number to the power of another number.
+    SQRT(number): Returns the square root of a number.
+    MOD(dividend, divisor): Returns the remainder of a division operation.
+    EXP(number): Returns the value of the constant e raised to the power of a number.
+    LOG(base, number): Returns the natural logarithm of a number with the specified base.
+    TRUNC(number [, precision]): Truncates a number to the specified number of decimal places.
