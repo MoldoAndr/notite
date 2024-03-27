@@ -1,0 +1,78 @@
+etapele compilarii : 
+        
+        - preprocesarea 
+                        -  are efect asupra comenzilor ce incep cu #
+                            - eliminare comentarii
+                            - includere biblioteci
+                            - definire macros
+       
+        - compilare efectiva
+                        -  genereaza o sursa in limbaj de asamblare
+                            - dupa executie, sursa va avea urmatorul continut :
+                        -  comanda :  gcc -masm=intel -S hello.c  
+                        -  .LC0: constanta locala
+                        -  endbr64 - finalizeaza branchul de control impotriva atacurilor ROP si JOP
+                        -  "LFB0" - inceputul functiei locale
+                        -  "LFE0" - sfarsitul functiei locale
+
+                .file   "hello.c"      
+                        - sursa din care a rezultat fisierul de asamblare 
+                .intel_syntax noprefix  
+                        - se pot emite prefixe de tipul eax in loc de ax
+                - .ident "GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"       
+                        - information about the compiler 
+                - .section .note.GNU-stack,"",@progbits
+                        - informations aobut the executable permissions
+                - .section .note.gnu.property,"a"
+                        - information about the binary
+                - .align 8
+                        - information about the divisible addresses
+                - .long 1f - 0f
+                        - distance between the label 1: and the label 0:
+                - .long 4f - 1f
+                        - difference between 4 and 1
+                - .long 5
+                        - defines a 32-bit integer with the value 5
+                - 0:
+                        - marking location in the code
+                - .align 8:
+                        -aligns the next instruction or data on an 8-byte boundary
+       
+        - asamblarea
+                - convertire conținutul din limbaj de asamblare în conținut binar (cod mașină). 
+                - codul este cunoscut și sub numele de cod obiect.
+        
+        - link-editarea
+                - linkerul unește tot codul obiect din mai multe module într-unul singur. 
+                - dacă folosim o funcție dintr-o bibliotecă anume, linkerul va combina 
+                - codul sursei noastre cu codul acelei funcții de bibliotecă.
+
+
+- stackframe    - spatiu de stiva alocat pentru o functie
+                - contine parametrii
+                - contine variabile locale
+                - contine instructiuni
+                - adresa de return
+                - instructiuni
+                - base pointer
+                - mov bp, sp - reactualizare stiva pentru urmatorul apel de functie    
+                        - prologul unei functii
+                - ret ip - finalul, reprezentand adresa la care ne intoarcem
+                - int a = sub sp, 4 - alocare pe stiva de 4 octeti
+                - add sp, 4 - eliminare de pe stiva
+                - mov [sp-4], 0x1
+                - little endian : 0x0010 => 10 00 
+
+RETURN ORIENTED PROGRAMMING - ROP 
+                - based on the buffer overrun/overflow
+                        - buffer overflow = data beyond the buffer limit
+                                        and writing adjenct data locations
+
+JUMP ORIENTED PROGRAMMING - JOP
+                - based on gaining control over the instruction pointer - IP 
+                - based on buffer overrun / buffer overflow
+                - targeting exception handling structures
+
+        -opțiunea „-m32“ setează tipurile int, long, pointer la o dimensiunea de 32 biți
+        -codul generat rulează într-un mod pe 32 biți (GCC x86 Options).
+                -gcc -Wall -m32 -masm=intel -S hello.c

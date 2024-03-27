@@ -1,0 +1,54 @@
+observatii:
+
+    TRANSMITEREA PARAMETRILOR:
+
+        transmiterea prin valoare:
+            int function(int a, int b){}
+                mov QWORD PTR[rbp-4], edi;
+                mov QWORD PTR[rbp-8], esi;
+        se obs. ca valorile sunt adaugate 
+        stackframe-ul functii curente
+
+        transmiterea prin referinta:
+            int function(int& a,int &b){}
+                mov QWORD PTR[rbp-8], rdi
+                mov QWORD PTR[rbp-16], rsi
+        se obs. ca valorile sunt preluate din
+        stackframe-ul functii apelante
+
+        transmiterea prin pointer:
+            int function(int* a, int* b){}
+                mov QWORD PTR[rbp-8], rdi
+                mov QWORD PTR[rbp-16], rsi
+        se obs. ca valorile sunt preluate din
+        stackframe-ul functii apelante
+        
+    FUNCTII CU TIP/FARA TIP:
+
+        functie cu tip: 
+            int function(int *a,int *b){}
+            push    rbp
+            mov     rbp, rsp
+            mov     QWORD PTR [rbp-8], rdi
+            mov     QWORD PTR [rbp-16], rsi
+            ud2
+        se obs. ca nu se da pop din cauza lipsei
+        valorii de return
+
+        functie fara tip:
+            push rbp
+            mov rbp, rsp
+            mov QWORD PTR[rbp-8], rdi
+            mov QWORD PTR[rbp-16], rsi
+            nop
+            pop rbp
+            ret
+        se obs. ca se da automat pop de pe stiva
+        de apel a functiei
+
+    TIPUL FUNCTIILOR CU TIP:
+
+        tipul functiei cu tip nu influenteaza
+        stackframe-ul actual, ci doar pe cel
+        apelant
+        

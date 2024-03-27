@@ -1,0 +1,58 @@
+=====DATE DATA TYPE FUNCTIONS MySQL====
+
+GETDATE();
+            -- Returns the current date and time of the system.
+
+SELECT GETDATE();
+SYSDATETIME();
+            -- Similar to GETDATE(), returns the current date and time of the system, but with higher precision.
+
+SELECT SYSDATETIME();
+DATEADD()
+            -- Adds a specified number of date or time units to a given date.
+
+SELECT DATEADD(day, 7, GETDATE()); 
+            -- Adds 7 days to the current date
+
+DATEDIFF();
+            -- Calculates the difference between two dates, expressed in a specified date part (such as days, months, years).
+
+SELECT DATEDIFF(day, '2024-03-01', '2024-03-08'); 
+            -- Calculates the difference in days between two dates
+
+DATEPART() 
+            -- Extracts a specific part (such as year, month, day) from a date.
+
+SELECT DATEPART(year, '2024-03-08'); 
+            -- Extracts the year from the given date
+
+DATENAME(); 
+            -- Returns a specified part of a date as a character string (such as the name of the month or the day of the week).
+
+SELECT DATENAME(month, '2024-03-08'); 
+            -- Returns the name of the month from the given date
+
+CONVERT();
+            -- Converts a date or time from one data type to another.
+
+SELECT CONVERT(VARCHAR, GETDATE(), 101); 
+            -- Converts the current date to a string in mm/dd/yyyy format
+
+FORMAT(); 
+            --Formats a date value according to a specified format pattern.
+
+SELECT FORMAT(GETDATE(), 'MMMM dd, yyyy'); 
+            -- Formats the current date as 'Month day, year'
+
+DATEDIFF_BIG();
+            -- Similar to DATEDIFF(), but returns the result as a BIGINT data type for large date ranges.
+
+SELECT DATEDIFF_BIG(day, '2024-01-01', '2025-01-01'); 
+            -- Calculates the difference in days using BIGINT data type
+
+EOMONTH();
+            -- Returns the last day of the month containing a specified date.
+
+
+SELECT EOMONTH('2024-03-15'); 
+            -- Returns the last day of March 2024

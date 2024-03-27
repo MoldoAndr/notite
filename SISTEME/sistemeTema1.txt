@@ -1,0 +1,99 @@
+Exercitiul 1 - Configurare GRUB
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:
+
+    Comenzi initiale:
+        sudo nano /etc/default/grub          - comanda pentru deschidere fisier
+        GRUB_TIMEOUT=10                      - se modifica din fisier timeout-ul
+        GRUB_TIMEOUT_STYLE=menu              - se modifica sau se adauga aceasta linie
+    
+    Se salveaza prin CTRL+X => YES
+
+    Se copiaza poza in folderul /boot/grub:
+        sudo cp calea/catre/imagine/background.png /boot/grub/background.png
+    sugestie imagine: https://abload.de/img/bootpicgbfmt.png - functionala, 
+    GRUB accepta doar o anumita rezolutie  
+    
+    Se redeschide fisierul cu comanda
+        sudo nano /etc/default/grub
+
+    Se adauga linia de cod:
+        GRUB_BACKGROUND="/boot/grub/background.png"
+    
+    Se salveaza prin CTRL+X => YES
+    
+    Se da update prin comanda:
+        sudo update-grub
+    
+    Se da reboot prin comanda:
+        sudo reboot
+
+Exercitiul 2 - Back-up MBR
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:
+
+    Navigare in locatia dorita
+    Creare fisier de backup
+        sudo dd if=/dev/sda of=backup.bin bs=512 count=1
+
+Exercitiul 3 - fdisk
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+Rezolvare:  
+    Creare initiala a celor 2 partitii din VB
+    CTRL+ALT+T pentru terminal
+    (a)  
+        sudo fdisk /dev/sdc  (daca noua partitie se denumeste sdc)
+        n       - pentru creare de partitie
+        alegere dimensiune
+        n       - pentru creare de partitie
+        alegere dimensiune
+        w       - pentru salvare modificari
+    (b)
+        sudo gdisk /dev/sdd
+        n       - de 7 ori pentru creare partitii
+        w       - pentru salvare
+
+    lsblk - pentru afisare partitionare
+
+Exercițiul 4 - SCRIPT
+https://wiki.mta.ro/c/2/so/tema-lab2
+
+    Se instaleaza utilitarele C cu:
+                sudo apt-get install build-essential
+                sudo apt-get update
+                sudo apt-get upgrade
+
+    Se creeaza o sursa .c
+    Se insereaza codul:
+
+        #include <stdio.h>
+        #include <string.h>
+        int main() {
+            FILE *fp;
+            char output[1024];
+            char command[] = "blkid -o list";
+            fp = popen(command, "r"); // executam comanda blkid - care afiseaza partitiile
+            if (fp == NULL) {
+                printf("Failed to run command\n");
+                return 1;
+            }
+            while (fgets(output, sizeof(output)-1, fp) != NULL) {
+                if (strstr(output,"ffbc2afa-6c68-4072-a12f-60459f91c588"))
+                {
+                    output[strlen(output) - 1] = '\0';
+                    printf("%s BOOTABIL\n",output);
+                }
+                //afisam partitiile cu mentiunea de bootabil sau nu
+                else 
+                printf("%s",output);
+            }
+            pclose(fp);
+            return 0;
+        }
+
+    Se salveaza sursa
+    Se compileaza cu gg
+    Se ruleaza executabilul cu sudo

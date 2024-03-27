@@ -1,0 +1,215 @@
+    Incapsularea datelor
+
+Switch  - transmitere date pe baza MAC
+        - verifica integritatea cadrului
+Hub     - transmitere si amplificare semnale
+        - fara operatii intermediare
+Router  - transmitere pachete pe baza IP destinatie
+        - citire IP -> trimitere pachet pe interfata corespunzatoare
+    
+Packet Tracer 
+        - permite vizualizarea incapsularii datelor transmise intre server
+            web si client
+
+Wireshark
+        - permite vizualizarea incapsularii datelor
+
+
+        Transmisii de date
+
+    - reprezentarea datelor este facuta in biti de 0/1, indiferent de
+        modul de organizare a datelor
+    - in cadrul retelelor, datele sunt reprezentate si transmise
+        sub forma de:   - semnale electrice (analogice/digitale)
+                        - semnale electromagnetice (transmisii radio)
+                        - impulsuri luminoase (fibra optica)
+    
+    - componentele tansmisiei datelor :  transmitator
+                                        mediu de transmisie
+                                        receptor
+    
+    - moduri de transmisie a datelor:
+            - simplex: o singura directie
+            - half-duplex: ambele directii, una la un moment dat
+            - full-duplex: ambele directii, simultan
+
+    - semnalul periodic este definit de:
+                                    perioada
+                                    frecventa
+                                    lungime de unda
+                                    viteza de propagare
+    
+    - latimea de banda: capacitatea mediului de transmisie
+    - rata/viteza de transmisie (bit rate): biti pe secunda
+    - latime de banda mare -> rata de transmisie rdicata
+
+    - avantaje transmisii digitale:
+                    - rezistenta la zgomot
+                    - ieftin de implementat
+                    - folosita pentru sistemele de calcul
+        
+    - factori perturbatori:
+                    - atenuarea
+                    - banda limitata
+                    - intarzierea
+                    - zgomotul
+
+    - tipuri de medii de transmisie:
+                    - ghidate
+                    - neghidate
+    
+    - tipuri de medii de transmisie ghidate:
+                    - cablu coaxial 
+                    - cablu torsadat
+                    - fibra optica
+    
+    - cablu coaxial:
+        - fir de Cu rigid
+        - mateliar izolator
+        - conductor cilindric 
+        - invelis de plastic
+        - latime de banda ridicata
+        - conductor gros
+        - tronsoane lungi
+        - vulnerabil la interferente
+        - folosit in telefonia fixa
+        - standart: DOCSIS - Data Over Cable Service Interface Specificatioos
+        - conexiunea se face prin conectori BNC
+
+    - cablu torsadat
+        - 4 perechi de 2 fire de Cu izolate si torsadate impreuna
+        - torsadarea - asigura acelasi nivel de zgomot si reduce interferenta
+        - aplicatii:
+            - cel mai ieftin si cel mai folosit
+            - telefonie
+            - retele locale de calculatoare
+            - sisteme de supraveghere digitale
+        - viteza: 10MB ~ 40GB
+        - avantaje:
+            - ieftin
+            - usor de utilizat
+        - dezavantaje:
+            - limitat de: distanta, latime de banda si rata de transfer
+            - susceptibil la interferente si zgomote
+        - scopul torsadarii: reducerea diafoniei (torsadare + ecranare)
+        - tipuri: 
+            - neecranat: UTP: Unshielded Twisted Pair 
+            - ecranat: Shielded/Screened Twisted Pair
+        - neecranat
+            - lungime maxima segment: 100m
+            - nu prezinta protectie impotriva interferentelor
+            - avantaje: 
+                - cel mai ieftin
+                - simplu de reparat
+                - transmisie fidela pe distante mici
+            - dezavantaje:
+                - vulnerabil la crosstalk, EMI(Electro-Magnetic Interference), RFI(Radio Frequency Interference)
+        - ecranat
+            - 2 tipri de protectie => reducere zgomote
+                - toate 4 perechi torsadate invelita intr-o folie
+                - fiecare pereche torsadata invelita intr-o folie
+            - avantaje:
+                - mai putin vulnerabil
+                - transmisie de date de buna calitate
+                - instalare simpla
+            - dezavantaje
+                - mai scump decat UTP
+                - instalare mai dificila decat UTP
+        - tipuri:
+            - S/FTP     - Screened Foiled Twisted Pair
+            - F/UTP     - Foiled Unscreened Twisted Pair
+            - SF/UTP    - Shielded Unfoiled Twisted Pair
+            - U/UTP     - Unshielded Unfoiled Twisted Pair
+
+        - conectori: 
+            - RJ 45 - contine 8 pini 
+                - ecranat/neecranat
+        - categorii de cabluri Twisted Pair
+            - Categoria 1,2,3,4 - DEPRECIATE
+            - Categoria 5
+                - 100MBps
+                - 100m
+            - Categoria 5e
+                - 1GBps
+                - 100m
+            - Categoria 6
+                - 1GBps
+                - 100m
+            - Categoria 6a
+                - 10GBps
+                - 55m
+            - Categoria 7
+                - 10GBps
+                - 100m
+            - Categoria 7a
+                - 40GBps
+                - 55m
+            - Categoria 8
+                - 25GBps/40GBps
+                - 5/10m
+                - datacenter
+
+    - Fibra optica
+        - latime de banda uriasa
+        - dimensiuni reduse
+        - atenuare scazuta
+        - imun la campuri electromagnetice
+        - greu de interceptat
+        - pana la 100km
+
+        - dioda de date:
+            - transmiterea datelor in OneWay
+            - prezinta source si receiver
+        
+        - tehnologie noua: WDMT : Wawelength Division Multiplexing
+            - o singura fibra -> conexiuni multiple
+            - lugimi de unda diferite
+            - pe baza spectrului luminii
+        - aplicabilitate noua: 
+            - BiDi - Bidirectional Transmission
+            - 1 singura fibra 
+            - transmitere full-duplex
+            - fascicule de lungimi de unda diferite
+        
+        - conectarea fibrelor optice:
+            - prin lipire: incalzire -> slefuire -> lipire
+            - prin conectoare optice
+
+        CABLARE
+
+    - Echipamente care transmit pe pinii 3,6 si receptioneaza pe 1,2 (L2)
+        - echipamente Switch:
+                Switch
+                Hub
+                Bridge
+    - Echipamente care transmit pe pinii 1,2 si receptioneaza pe 3,4 (L3)
+        - echipamente non-Switch:
+                PC 
+                Router
+                Access Point
+                Imprimanta de retea 
+                Media converter: transforma semnalele
+    - tipuri de cabluri:    
+        - cablul Straight - Through
+            - conectare echipamente de niveluri diferite
+        - cablu Crossover
+            - conectare echipamente de acelasi nivel
+    
+    - MDI - Medium Dependent Interface
+            - intefata de retea dependenta de mediul de transmisie
+    - MDI-X - Medium Dependent Interface Crossover
+            - liniile de comunicatie sunt incrucisate
+    - Auto-MDIX 
+            - optiune ce permite adaptarea la tipul de retea dorit
+    
+    - Standarde pentru codul de culori
+        AV - Alb Verde, V - Verde, AP - Alb Portocaliu, P - Portocaliu
+        A - Albastru, AA - Alb Albastru, M - Maro, AM - Alb Maro
+        - TIA/EIA 568 A -> AV-G-AP-A-AA-P-AM-M
+        - TIA/EIA 568 A -> AP-P-AV-A-AA-V-AM-M
+    
+    - cablari : Straight-Through : TIA/EIA 568 B -> TIA/EIA 568 B  - la ambele capete
+                Crossover: diferit la capete
+
+    - POE - Power Over Ethernet - 2/4 din firele de Cu 
+                        rezervate pentru transfer de curent

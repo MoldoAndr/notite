@@ -1,0 +1,50 @@
+          Arhitectura sistemelor de calcul
+                        |
+                        |
+                        |
+        ------------------------------------
+        |               |                  |
+    Von Neumann         |           non Von Neumann
++ memoria: spatiu       |                  |
+    unificat            |      --------------------------
++ magistrala partajata  |      |                        |
++ scalabila             |   Harvard         |  Harvard Hibrid 
+- bottleneck: magistrala| + nu e partajata  |  + acces la cache
+    partajata introduce |   magistrala      |  + nepartajata
+    o limitare a perf.  | + microcontroller |  + utilizata astazi
+- dificil pt.           | + memoria nu este |  + memoria nu este
+    procesare paralela  |   unificata       |     unificata
+    
+---ASTAZI---
+
+Din punct de vedere fizic: Harvard
+        - 2 cache-uri : data si instruction
+
+Din punct de vedere logic: Von Neumann
+        - programele si datele se afla intr-o
+            memorie unificata
+
+Compozitie program:
+    Flux de date
+    Flux de instructiuni
+
+Taxonomia lui Flynn: numarul de fluxuri concurente
+    SISD - Single Instruction, Single Data 
+    SIMD - Single Instruction, Multiple Data
+    MISM - Multiple Instruction, Multiple Data
+    MIMD - Multiple Instruction, Multiple Data
+
+SISD    - Model Von Neumann
+        - 1 ALU
+        - adunarea a 2 vectori element cu element
+
+SIMD    - Vector de ALU
+        - Registrii mari
+        - adunarea a 2 vectori intr-o singura operatie
+
+MISD    - mai multe programe - aceleasi date
+        - sisteme de toleranta la erori (redundanta)
+    
+MIMD    - sistem multiprocesor
+        - procesoare independente, fluxuri de date diferite
+        - paralel computing

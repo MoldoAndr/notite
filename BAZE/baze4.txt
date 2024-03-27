@@ -1,0 +1,86 @@
+Crearea unei baze de date
+    CREATE DATABASE Baza
+            ||
+    CREATE DATABASE Baza
+    ON PRIMARY
+    (
+        Name = Data1,
+        FileName = 'Data1.mdf',
+        size = 10MB,
+        maxsize = unlimited,
+        filegrowth = 1GB
+    ),
+    (
+        Name = Data2,
+        FileName = 'Data2.ndf',
+        size = 10MB,
+        maxsize = unlimited,
+        filegrowth = 1GB
+    )
+    LOG ON
+    (
+        Name = Log1,
+        FileName = 'Log1.ldf',
+        size = 10MB,
+        maxsize = unlimited,
+        filegrowth = 1GB
+    )
+
+Grupuri de fisiere
+    FILEGROUP FILEGROUP
+    (
+        Name = Data2,
+        FileName = 'Data2.ndf',
+        size = 10MB,
+        maxsize = unlimited,
+        filegrowth = 1GB
+    ),
+    (
+        Name = Data3,
+        FileName = 'Data3.ndf',
+        size = 10M,
+        maxsize = unlimited,
+        filegrowth = 1GB
+    )
+
+Stergerea unei baze de date
+    DROP DATABASE BazaDeDate
+
+Crearea unei baze de date
+    CREATE TABLE BazaDeDate
+    ( 
+        Tabel1 int,
+        Tabel2 varchar(50)
+    )
+    PROPRIETATEA IDENTITY A UNEI COLOANE DIN TABEL:
+        IDENTITY(1,1) ==== incepe de la 1 si incrementeaza cu 1
+
+Modificarea unei tabele
+    - adaugare:
+        ALTER TABLE Cat
+            ADD CatName varchar(10);
+    - stergere 
+        ALTER TABLE Cat
+            DROP COLUMN CatName
+    - schimbarea starii de NULL
+        ALTER TABLE Cat
+            ALTER Column CatName varchar(10) NOT NULL
+
+Stergerea unei tabele
+    DROP TABLE Cat
+
+Folosirea Constrangerilor
+    NOT NULL        (Constrange la valoare nenula)
+    UNIQUE          (Marcheaza ca unic un anumit camp)
+    PRIMARY KEY     (Asigneaza cheia primara unei tabele)         
+    FOREIGN KEY     (Creeaza o legatura cu alta tabela)
+    CHECK           (Limiteaza domeniul de valori)
+    DEFAULT         (Seteaza o valoare implicita cand nu este specificat nimic)
+
+Inserari elementare de date
+
+        INSERT INTO Products(ProductID, ProductName)
+        VALUES
+        (1,"Paine"),
+        (2,"Lapte")
+

@@ -1,0 +1,154 @@
+Arhitectura IA32 ofera:
+
+8 registrii de uz general:  EAX, EBX, ECX, EDX, ESP, EBP, ESI, EDI
+6 registrii segment:        CS, DS, ES, FS, GS, SS
+1 registru de stare/control:EFLAGS(32 de biti din care 18 ocupati)
+1 registru offset:          EIP - instruction pointer
+
+
+==INSTRUCTIUNI==
+General-Purpose Instructions
+    - basic data movement, arithmetic, logic, program flow 
+        and string operations operating on the general-purpose register,
+        segment registers and EFLAGS register
+    - data transfer Instructions: moves data between RAM and registers
+        - MOV   - moves data between RAM and register
+        - CMOVE - conditional move if equal
+        - XCHG  - exchange
+        - BSWAP - byte swap
+        - XADD  - exchange and Address
+        - PUSH  - push onto stack
+        - POP   - pop off the stack
+        - PUSHA - push G.P.R onto the stack
+
+Binary-Arithmetic Instructions
+    - basic binary integer computations on byte/word/doubleword
+        - ADDCX - Unsigned int  eger add with carry
+        - ADD   - Integer Add
+        - ADC   - Add with carry
+        - SUB   - Substract
+        - IMUL  - Integer multiply
+        - MUL   - Unsigned multiply
+        - IDIV  - Signed divide
+        - DIV   - Unsigned divide
+        - INC   - Increment
+        - DEC   - Decrement
+        - NEG   - Negate
+        - CMP   - Compare
+
+Decimal-Arithmetic Instructions
+    - decimal operations on binary coded decimal data
+        - DAA       - Decimal adjust after addition
+        - DAS       - Decimal adjust after substraction
+        - AAA/S/M/D - Ascii adjust after addition/sub/mult/div
+
+Logical Instructions
+    - AND   - bitwise AND
+    - OR    - bitwise OR
+    - XOR   - bitwise XOR
+    - NOT   - bitwise NOT
+
+Shift and Rotate Instructions
+    - shift/rotate the bits in a word/doubleword
+        - SAR/SHR   - shift arithmetical/logical right
+        - ROL/ROR   - rotate left/right
+
+Bit and Byte Instructions
+    - bit->modifies bits in a word, byte->modifies bytes in a doubleword
+            - BT    - Bit Test
+            - BTS   - Bit Test Set
+            - TEST  - Logical Compare
+
+Control Transfer Instructions
+    - control program flow modifiers
+        - JMP   - jump
+        - JE    - jump if equal
+        - JC    - jump if carry
+        - CALL  - call procedure
+        - RET   - return
+        - IRET  - return from interrupt
+        - INT   - software interrupt
+        - INTO  - interrupt on overflow
+        - BOUND - detect value out of range
+        - ENTER - high-level procedure entry
+        - LEAVE - high-level procedure exit
+
+String Instructions
+    - operate on strings of bytes, allowing them to be moved from memory
+        - MOVS  - move string
+        - CMPS  - compare string
+        - SCAS  - scan string
+        - STOS  - store string
+        - REP   - repeat while ECX != 0
+
+I/O Instructions
+    - moves data between I/O ports and a register or memory
+        - OUTS/OUTSD    - Output string/doubleword to port
+
+Flag Control (EFLAG) Instructions
+    - operate on the flags in the EFLAGS register
+          -  STC             - Set carry flag
+          -  CLC             - Clear the carry flag
+          -  CMC             - Complement the carry flag
+          -  CLD             - Clear the direction flag
+          -  STD             - Set direction flag
+          -  LAHF            - Load flags into AH register
+          -  SAHF            - Store AH register into flags
+          -  PUSHF/PUSHFD    - Push EFLAGS onto stack
+          -  POPF/POPFD      - Pop EFLAGS from stack
+          -  STI             - Set interrupt flag
+          -  CLI             - Clear the interrupt flag
+
+Segment Register Instructions
+    - allow far pointers (segment addresses) to be loaded into the
+        segment registers
+            - LD/E/F/G/SS   - Load far pointer in DS/ES/FS/GS/SS
+
+Miscellaneous Instructions
+    - provide loading effective addresses from the RAM
+            - LEA   -   Load Effective Address
+            - NOP   -   No Operation
+            - UD    -   Underdefined Instruction
+            - CPUID -   Processor Identification
+
+STRUCTURA SI SINTAXA COD ASSEMBLY
+
+    -   Sections:
+        -   data section
+        -   bss section
+        -   text section
+
+    -   data section
+            - sintaxa pentru declarare sectiune:
+                section .data
+            -   date initializate deja
+            -   constante
+            -   nume de fisiere, buffere, etc.
+            
+    -   bss section - block starting symbol
+            - sintaxa pentru declarare sectiune:
+                section .bss
+            -   declarare de variabile locale
+
+    -   text section
+            - sintaxa pentru declarare sectiune:
+                section .text
+                    global _start
+                    _start:
+            -   codul efectiv
+            -   trebuie sa inceapa cu 
+                global _start
+                    - indicator despre inceperea executiei 
+                        - info pentru kernel
+    
+    -   Syntax of statements:
+
+        [label]     mnemonic    [operands]      [;comments]
+        
+        example:    INC COUNT       ;increments the COUNT
+                    MOV TOTAL, 48   ;total=48;
+
+        label example : _start, _forward
+            - indica locul catre care trebuie facut un salt
+        
+        OF  - overflow flag that

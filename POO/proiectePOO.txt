@@ -1,0 +1,85 @@
+Proiecte Programare Orientata pe Obiecte
+
+Proiect 1
+	Platforma pentru medii de virtualizare
+		conectare server
+		solicitare din diverse masini virtuale simulate
+		dechidere de procese
+		intrare intr-o bucla de primire comenzi si transmitere informatii			
+		fiecare masina efectiva va primi o serie de comenzi:
+			make file, va crea un fisier si va afisa in consola	
+			ls - unde esti 
+			cat	-citire fisier
+			exit/stop - oprire masina
+		aplicatia client va comuta catre interfata principala de unde se pot vedea si alege masinile
+		se pot crea/sterge masini 
+		se afiseaza informatii despre fiecare masina virtuala in parte din interfata principala		
+		exista un numar maxim de masini virtuale
+		crearea unor statistici
+				se pot crea utilizatori 
+				fiecare utilizator are un numar de masini virtuale
+				in ce stare sunt masinile virtuale la un moment dat		
+
+Proiect 2	
+	Aplicatie de tip clinica electronica
+		logare medic/pacient
+		pacient : solicitare consultatii
+		medic:  	programare consultatii
+				alegere solutii naturiste/medicamente 
+		existenta unei liste de produse
+		se pot cumpara dupa reteta medicamentele
+		ca medic, se poate discuta cu pacientul : 2 posibilitati: mesagerie instanta cu ambii conectati /mesagerie neinstanta
+		consultatia este o conversatie
+		doctorul adauga listei de afectiuni diferite tratamente bazate pe medicamente
+		se pot adauga diferite produse naturiste
+		fiecare produs naturist  are sugestii
+		poti cauta afectiunea si iti apar recomandari bazate pe aceste sugestii
+		medicamentul are informatii : compozitie/ utlizare/ recomandari = PROSPECT RELATIV
+		lista medici
+		lista medicamente
+		lista pacienti
+
+Proiect 3
+	Aplicatie redare audio si video
+		autentificare client
+		afisare fisiere audio/video pe categorii
+		se poate alege fisierul dorit pentru redare
+		functionalitate de streaming
+		se pot adauga fisiere in baza de date la nivelul utilizatorului care mai apoi vor fi redate
+		un fisier audio : mp3 poate fi ascultat, redat la boxe
+		un fisier video : mp4 poate fi vizualizat
+		se poate acorda un rating pentru fiecare fisier
+		se poate lasa un comentariu
+		pe baza rating se face o clasificare
+		fiecare utilizator poate vedea ratingul / stelutele/ comentariile
+		fiecare fisier va fi adaugat in diferite categorii
+		categorie : muzica pop, muzica rock, etc
+		in functie de gen muzical preferat ales la nivelul sign up, se afiseaza fisiere din categoria respectiva
+		de exemplu : YouTube
+		variante : serverul deschide fisierul ca binar si il codifica base64 de exemplu si il trimite 
+				serverul transmite un fisier json, extrage continutul si foloseste playerul LOCAL: Windows Video
+		
+Proiect 4
+	Aplicatie Master Chef
+		baza de date cu diferite retete cu imagini
+		imagini adaugate de client/server
+		retetele sunt detaliate
+		lista de ingrediente
+		creare cos de cumparaturi virtual 
+		calculare pret fiecare reteta
+		se realizeaza aproximari pentru produse
+		ex: cat valoareaza o ceapa
+		baza de date preturi fixe
+		logare ca bucatar/client
+		bucatar: adaugare reteta
+		client: citire reteta
+		ca bucatar se pot modifica retete
+		retetele sunt puse pe categorii
+		ingredientele sunt expuse pe categorii
+		mecanism de rating
+		mecanism de comentarii 
+		mecanism de sugestii bazat pe rating si cautari
+		statistici generate: 
+			rating retete
+			rating bucatar
+			numar de retete bucatar
